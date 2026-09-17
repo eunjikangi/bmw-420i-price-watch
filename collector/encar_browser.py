@@ -185,6 +185,10 @@ def discover_encar(fetcher,max_pages=15):
             info['status']=getattr(e,'status','일부만 조회' if found else '접속 오류')
             info['note']=stage+' 단계: '+getattr(e,'note',type(e).__name__+': '+str(e).splitlines()[0][:160])
             info['diagnostics']={'stage':stage,'pageTitle':page.title(),'filterCount':page.locator('a[data-action]').count(),'failedRequests':failed_requests[:12],'badResponses':bad_responses[:12]}
+            if not info['diagnostics']['filterCount']:
+                message=page.locator('body').inner_text(timeout=3000)[:800]
+                message=re.sub(r'\b[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}\b|(?:\+82[- ]?)?0\d{1,2}[- ]?\d{3,4}[- ]?\d{4}', '[비공개]',message)
+                info['diagnostics']['emptySearchMessage']=message
         finally:browser.close()
     info['listingCount']=len(found);info['checkedAt']=timestamp()
     return info,list(found.values())
