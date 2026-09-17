@@ -10,19 +10,16 @@ const isWhite=r=>/흰색|백색|화이트|\bwhite\b/i.test(r.color||'');
 const wasListed=r=>r.status==='광고 게시 중'||(r.stale&&[...(r.observations||[])].reverse().find(o=>o.kind==='관측 광고가격')?.status==='광고 게시 중');
 const finance=r=>/리스|렌트|월납입|구독/.test(r.priceKind+' '+r.saleMethod);
 const link=(u,label)=>/^https:\/\//.test(u||'')?`<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>`:esc(label);
-let data,tab='overview',filters={},sort='white',lastFocus;
+let data,tab='all',filters={},sort='white',lastFocus;
 const sortModes={price:{asc:'price-up',desc:'price-down'},year:{asc:'year-up',desc:'year'},mileage:{asc:'mileage',desc:'mileage-down'}};
 function syncSortControls(){const field=Object.keys(sortModes).find(k=>Object.values(sortModes[k]).includes(sort));$('#sort').value=field||'white';$('#sort-direction').disabled=!field;$('#sort-direction').value=field&&sortModes[field].desc===sort?'desc':'asc';}
 function changeSort(){const field=$('#sort').value;sort=field==='white'?'white':sortModes[field][$('#sort-direction').value];render();}
 const enums={color:['전체 색상','흰색 계열','흰색 외','미확인'],region:['전국','서울','경기','인천','부산','대구','대전','광주','울산','세종','강원','충북','충남','전북','전남','경북','경남','제주','미확인'],trim:['모든 트림','M Sport','M Sport Pro','미확인'],facelift:['전체','부분변경 전','부분변경 후','미확인'],sale:['모든 구매 방식','일반 광고','현금 판매','할부','금융리스','운용리스','렌트·구독','미확인'],cert:['모든 인증','BMW BPS','KB진단','기타','미확인'],history:['전체','플랫폼 진단 확인','기록부 원본 확인','미확인']};
 function select(name,label){return `<label><span>${label}</span><select data-filter="${name}" aria-label="${label}">${enums[name].map((t,i)=>`<option value="${i?esc(t):''}">${esc(t)}</option>`).join('')}</select></label>`;}
-function range(key,label,place1,place2){return `<label><span>${label}</span><span class="range"><input type="number" min="0" data-filter="${key}Min" aria-label="${label} 최소" placeholder="${place1}"><span>–</span><input type="number" min="0" data-filter="${key}Max" aria-label="${label} 최대" placeholder="${place2}"></span></label>`;}
 function setup(){
- $('#filters').innerHTML='<div class="filter-basic">'+select('color','외장 색상')+select('region','판매 지역')+range('price','일반 광고가격 (만원)','최소','제한 없음')+range('year','모델연도','최소','최대')+range('km','주행거리 (km)','최소','제한 없음')+'</div><details class="filter-more"><summary>트림·판매 방식·이력 등 세부 조건 <span>5개 필터</span></summary><div class="filter-more-grid">'+select('trim','트림')+select('facelift','부분변경')+select('sale','판매 방식')+select('cert','인증 종류')+select('history','이력 확인 상태')+'</div></details>';
- $('#filters').addEventListener('input',e=>{if(e.target.dataset.filter){filters[e.target.dataset.filter]=e.target.value;render();}});
+ setupFilters();
  $('#sort').addEventListener('change',changeSort);$('#sort-direction').addEventListener('change',changeSort);
- $('#reset').addEventListener('click',()=>{filters={};sort='white';$('#sort').value=sort;document.querySelectorAll('[data-filter]').forEach(e=>e.value='');render();});
- $('#nav').addEventListener('click',e=>{if(e.target.dataset.tab){tab=e.target.dataset.tab;render();}});
+ $('#nav').addEventListener('click',e=>{const b=e.target.closest('[data-tab]');if(b){tab=b.dataset.tab;render();b.scrollIntoView({block:'nearest',inline:'nearest'});}});
  $('#content').addEventListener('click',e=>{if(e.target.closest('[data-open-comparison]')){tab='all';render();return;}const b=e.target.closest('[data-record]');if(b)openRecord(b.dataset.record);});
  $('#close-detail').onclick=()=>$('#detail').close();$('#detail').addEventListener('close',()=>lastFocus?.focus());
  $('#detail').addEventListener('click',e=>{if(e.target===$('#detail') && (e.offsetX<0||e.offsetY<0||e.offsetX>e.target.clientWidth||e.offsetY>e.target.clientHeight))e.target.close();});
@@ -33,7 +30,7 @@ function summary(){
  const fresh=data.vehicles.filter(g=>g.offers.some(r=>!r.stale&&r.status==='광고 게시 중'));
  const retained=data.vehicles.filter(g=>g.offers.some(wasListed));const wh=retained.filter(g=>g.offers.some(isWhite));const latest=data.runs?.at(-1)||{};
  const status=data.sources.reduce((a,s)=>(a[s.status]=(a[s.status]||0)+1,a),{});
- $('#summary').innerHTML='<div class="stat-grid"><div class="stat"><span>비교 자료</span><strong>'+retained.length+'<small>대</small></strong><p>동일 차량 중복 확인 후</p></div><div class="stat"><span>흰색 계열</span><strong>'+wh.length+'<small>대</small></strong><p>다른 색상도 함께 비교</p></div><div class="stat"><span>정상 확인 자료</span><strong>'+fresh.length+'<small>대</small></strong><p>이전 자료 '+(retained.length-fresh.length)+'대 보존</p></div><div class="stat stat-changes"><span>이번 수집 변화</span><strong>'+Number(latest.newCount||0)+'<small>신규</small><b>·</b>'+Number(latest.priceChangeCount||0)+'<small>가격 변경</small></strong><p>실제 관측 변화만 기록</p></div></div><div class="source-summary"><span><i class="source-dot"></i>출처 '+(status['조회 성공']||0)+' 성공 · '+(status['일부만 조회']||0)+' 일부 · '+(data.sources.length-(status['조회 성공']||0)-(status['일부만 조회']||0)-(status['정상 검색 결과 대상 매물 없음']||0))+' 제한/오류</span><span>마지막 수집 '+fulltime(data.updatedAt)+' KST</span></div>';
+ $('#summary').innerHTML='<div class="stat-grid"><div class="stat"><span>비교 자료</span><strong>'+retained.length+'<small>대</small></strong><p>동일 차량 중복 확인 후</p></div><div class="stat"><span>흰색 계열</span><strong>'+wh.length+'<small>대</small></strong><p>다른 색상도 함께 비교</p></div><div class="stat"><span>정상 확인 자료</span><strong>'+fresh.length+'<small>대</small></strong><p>이전 자료 '+(retained.length-fresh.length)+'대 보존</p></div><div class="stat stat-changes"><span>신규 / 변경</span><strong>'+Number(latest.newCount||0)+'<small>신규</small><b>·</b>'+Number(latest.priceChangeCount||0)+'<small>가격 변경</small></strong><p>실제 관측 변화만 기록</p></div></div><div class="source-summary"><span><i class="source-dot"></i>출처 '+(status['조회 성공']||0)+' 성공 · '+(status['일부만 조회']||0)+' 일부 · '+(data.sources.length-(status['조회 성공']||0)-(status['일부만 조회']||0)-(status['정상 검색 결과 대상 매물 없음']||0))+' 제한/오류</span><span>마지막 수집 '+fulltime(data.updatedAt)+' KST</span></div>';
 }
 function within(v,min,max){if(!min&&!max)return true;if(v==null)return false;return (!min||v>=Number(min))&&(!max||v<=Number(max));}
 function match(r){
@@ -64,10 +61,10 @@ function table(rs){
 }
 
 function render(){
- summary();syncSortControls();document.querySelectorAll('[data-tab]').forEach(b=>{b.classList.toggle('active',b.dataset.tab===tab);b.setAttribute('aria-current',b.dataset.tab===tab?'page':'false');});
- const showFilters=['all','recommend','bps'].includes(tab);$('#filters').hidden=!showFilters;$('#sort-label').hidden=!showFilters;$('#sort-direction-label').hidden=!showFilters;$('#reset').hidden=!showFilters;
- const supportsView=['all','bps'].includes(tab);$('#view-switch').hidden=!supportsView;document.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===comparisonView)));
- let rs=rows();$('#result-count').innerHTML=showFilters?`조건에 맞는 차량 <strong>${rs.length}</strong>대 · 금액은 광고값, 추가비용 별도`:'공개 자료와 관측 이력';
+ summary();syncSortControls();syncFilterControls();document.querySelectorAll('[data-tab]').forEach(b=>{b.classList.toggle('active',b.dataset.tab===tab);b.setAttribute('aria-current',b.dataset.tab===tab?'page':'false');});
+ const showFilters=['all','recommend','bps'].includes(tab);$('#filters').hidden=!showFilters;$('#sort-label').hidden=!showFilters||(['all','bps'].includes(tab)&&comparisonView==='graph');$('#sort-direction-label').hidden=$('#sort-label').hidden;$('#reset').hidden=!showFilters;
+ const supportsView=['all','bps'].includes(tab);$('.toolbar').dataset.view=supportsView?comparisonView:tab;$('#view-switch').hidden=!supportsView;document.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===comparisonView)));
+ let rs=rows();$('#content').dataset.view=(supportsView?comparisonView:tab);$('#result-count').innerHTML=showFilters?`조건에 맞는 차량 <strong>${rs.length}</strong>대 · 금액은 광고값, 추가비용 별도`:'공개 자료와 관측 이력';
  const c=$('#content');
  if(tab==='all'||tab==='bps')c.innerHTML=(comparisonView==='graph'?graphs(rs):table(rs))+`<p class="subnote">${tab==='bps'?'BMW BPS 표시를 확인한 차량만 표시합니다. 인증 표시가 개별 보증 잔여를 뜻하지는 않습니다. ':''}조회 실패 차량은 ‘이전 정상 자료 보존’으로 표시합니다. ‘광고 게시 중’은 상세페이지가 열렸다는 뜻입니다. 금융상품 가입 없는 구매가격·총인수비용·실재고는 별도 확인이 필요합니다. 표의 막대는 현재 표의 최대값 기준입니다. 가로로 스크롤하면 모든 비교 항목을 볼 수 있습니다.</p>`;
  else if(tab==='leads')c.innerHTML=searchLeadsView();
