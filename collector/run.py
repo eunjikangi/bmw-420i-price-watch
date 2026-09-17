@@ -170,6 +170,7 @@ def collect_source(src,old_records,web=True,max_pages=15,browser=True):
             a=attempts[0] if attempts else {};status=a.get('status','접속 오류');note=a.get('note','정상 응답 없음')
         if browser_result:
             note='헤드리스 검색 목록 '+str(len(browser_items))+'개 후보 확인. '+browser_result.get('note','')+' 상세페이지 자동수집 허용 여부는 별도 확인.'
+            if browser_result.get('status')=='접근 차단' and not healthy:status='접근 차단'
         info={'id':src['id'],'name':src['name'],'url':src['url'],'kind':src['kind'],'inventoryGroup':src.get('inventoryGroup',src['id']),'status':status,'note':note,'checkedAt':now(),'lastSuccess':max((r['lastSuccess'] for r in healthy),default=None),'verifiedCount':len(healthy),'listingCount':len(healthy) if complete else None,'internalSearch':{'pages':len(seen),'complete':complete},'webSearch':web_result,'attempts':attempts}
         if browser_result:info['browserSearch']=browser_result
         return info,out,list({canonical(l['url']):l for l in leads if canonical(l['url']) not in {r['url'] for r in healthy}}.values()),prices

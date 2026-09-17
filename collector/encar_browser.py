@@ -123,8 +123,8 @@ def discover_encar(fetcher,max_pages=15):
                 if blocked:raise FetchError('접근 차단',blocked[-1])
                 title=page.title()
                 body=page.locator('body').inner_text(timeout=5000)[:3000]
-                if re.search(r'Access Denied|Just a moment|보안문자를 입력|자동입력 방지|접근이 차단|비정상적인 접근',title+' '+body,re.I):
-                    raise FetchError('접근 차단','브라우저 보안 확인 화면. 우회하지 않음')
+                if re.search(r'Access Denied|Just a moment|보안문자를 입력|자동입력 방지|접근이 차단|비정상적인 접근|서비스 이용 제한됨|현재 접속이 제한|비정상적인 트래픽',title+' '+body,re.I):
+                    raise FetchError('접근 차단','사이트의 접속 제한·보안 확인 안내. 이전 정상 자료 보존')
             def navigate(url,selector):
                 if time.monotonic()>deadline:raise TimeoutError('브라우저 수집 시간 제한')
                 policy(url);page.goto('about:blank');response=page.goto(url,wait_until='domcontentloaded',timeout=40000)
@@ -183,10 +183,10 @@ def discover_encar(fetcher,max_pages=15):
             info['note']='모델·가솔린·컨버터블 등급 검색 및 페이지 이동 확인. 상세 확인과 별도.'
         except Exception as e:
             info['status']=getattr(e,'status','일부만 조회' if found else '접속 오류')
-            info['note']=stage+' 단계: '+getattr(e,'note',type(e).__name__+': '+str(e).splitlines()[0][:160])
+            info['note']=stage+' 단계: '+getattr(e,'note','브라우저 화면을 제한시간 안에 판독하지 못했습니다.' if 'Timeout' in type(e).__name__ else '브라우저 화면 판독 오류')
             info['diagnostics']={'stage':stage,'pageTitle':page.title(),'filterCount':page.locator('a[data-action]').count(),'failedRequests':failed_requests[:12],'badResponses':bad_responses[:12]}
             if not info['diagnostics']['filterCount']:
-                message=page.locator('body').inner_text(timeout=3000)[:800]
+                message=page.locator('body').inner_text(timeout=3000)[:110]
                 message=re.sub(r'\b[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}\b|(?:\+82[- ]?)?0\d{1,2}[- ]?\d{3,4}[- ]?\d{4}', '[비공개]',message)
                 info['diagnostics']['emptySearchMessage']=message
         finally:browser.close()

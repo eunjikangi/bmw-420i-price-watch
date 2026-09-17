@@ -11153,8 +11153,8 @@
       "url": "https://www.encar.com/",
       "kind": "중고차",
       "inventoryGroup": "encar",
-      "status": "일부만 조회",
-      "note": "헤드리스 검색 목록 0개 후보 확인. 검색 화면 열기 단계: TimeoutError: Locator.wait_for: Timeout 15000ms exceeded. 상세페이지 자동수집 허용 여부는 별도 확인.",
+      "status": "접근 차단",
+      "note": "클라우드 브라우저 검색에 사이트의 접속 제한 안내가 반환되었습니다. 이전 정상 목록 89개를 보존합니다. 상세페이지 자동 수집도 제한됩니다.",
       "checkedAt": "2026-09-17T16:17:36+00:00",
       "lastSuccess": "2026-09-17T15:07:18+00:00",
       "verifiedCount": 0,
@@ -11186,9 +11186,9 @@
         {
           "url": "https://www.encar.com/",
           "at": "2026-09-17T16:17:36+00:00",
-          "status": "접속 오류",
+          "status": "접근 차단",
           "scope": "Playwright 검색 목록",
-          "note": "검색 화면 열기 단계: TimeoutError: Locator.wait_for: Timeout 15000ms exceeded."
+          "note": "검색 화면 열기 단계: 사이트가 비정상적인 트래픽으로 접속 제한 안내를 반환했습니다. 이전 정상 목록 자료 보존"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42305837",
@@ -11414,19 +11414,19 @@
         }
       ],
       "browserSearch": {
-        "status": "접속 오류",
+        "status": "접근 차단",
         "method": "Playwright Chromium headless",
         "pages": 0,
         "complete": false,
         "queries": [],
-        "note": "검색 화면 열기 단계: TimeoutError: Locator.wait_for: Timeout 15000ms exceeded.",
+        "note": "검색 화면 열기 단계: 사이트가 비정상적인 트래픽으로 접속 제한 안내를 반환했습니다. 이전 정상 목록 자료 보존",
         "diagnostics": {
           "stage": "검색 화면 열기",
           "pageTitle": "엔카",
           "filterCount": 0,
           "failedRequests": [],
           "badResponses": [],
-          "emptySearchMessage": "엔카\n서비스 이용 제한됨\n\n시스템에서 비정상적인 트래픽이 감지되어\n현재 접속이 제한되었습니다.\n\n이용에 불편을 드려 진심으로 사과 드리며, 문제가 지속되는 경우\n고객센터(1599-5455)로 문의해주시기 바랍니다.\n\n홈으로"
+          "emptySearchMessage": "엔카\n서비스 이용 제한됨\n\n시스템에서 비정상적인 트래픽이 감지되어\n현재 접속이 제한되었습니다."
         },
         "listingCount": 0,
         "checkedAt": "2026-09-17T16:17:36+00:00"
