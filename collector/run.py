@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 from datetime import datetime,timezone
 from pathlib import Path
 from urllib.parse import urlparse,urljoin,parse_qs,urlencode,urlunparse
-from urllib.robotparser import RobotFileParser
+from .robots import RobotsPolicy as RobotFileParser
 import requests
 from bs4 import BeautifulSoup
 from .model import is_target,canonical,merge_record,group_records,changes,recommendation_state
@@ -96,8 +96,8 @@ def official_prices(s,url):
         except Exception:continue
     return out
 
-def collect_source(src,old_records,web=True,max_pages=15):
-    out=[];leads=[];attempts=[];prices=[];success=False;complete=False
+def collect_source(src,old_records,web=True,max_pages=15,browser=True):
+    out=[];leads=[];attempts=[];prices=[];success=False;complete=False;browser_items=[];browser_result=None
     queue=list(dict.fromkeys(src.get('searchUrls',[])+[src['url']]));seen=set();targets={canonical(u):{'url':u,'title':'기존 상세페이지','evidence':'기존 기록'} for u in src.get('seeds',[])}
     for r in old_records:targets[r['url']]={'url':r['url'],'title':r['model'],'evidence':'기존 기록'}
     forms=False
@@ -117,10 +117,20 @@ def collect_source(src,old_records,web=True,max_pages=15):
                 if src['id']=='getcha':prices+=parse_getcha_new(s,u,now())
             except FetchError as e:attempts.append({'url':u,'at':now(),'status':e.status,'note':e.note,'http':e.code})
         if src.get('pagination') and not queue and attempts and all(a['status']=='조회 성공' for a in attempts):complete=True
+        if src['id']=='encar' and browser:
+            try:
+                from .encar_browser import discover_encar
+                browser_result,browser_items=discover_encar(FETCH,max_pages)
+                leads+=browser_items
+                if browser_items:success=True
+                attempts.append({'url':src['url'],'at':now(),'status':browser_result['status'],'scope':'Playwright 검색 목록','note':browser_result.get('note','')})
+            except Exception as e:
+                browser_result={'status':getattr(e,'status','접속 오류'),'note':getattr(e,'note',type(e).__name__),'pages':0,'complete':False}
         web_result={'status':'미실행','note':'공개 웹 검색 생략 옵션'}
         if web and src['parser']!='guide':
-            leads,web_result=search_web(src)
-            for l in leads:targets.setdefault(canonical(l['url']),l)
+            web_leads,web_result=search_web(src)
+            leads+=web_leads
+            for l in web_leads:targets.setdefault(canonical(l['url']),l)
         for u,lead in list(targets.items())[:40]:
             old=next((r for r in old_records if canonical(r['url'])==u),None)
             try:
@@ -137,6 +147,18 @@ def collect_source(src,old_records,web=True,max_pages=15):
         have={r['id'] for r in out}
         for r in old_records:
             if r['id'] not in have:out.append(merge_record(r,None,now(),False))
+        if src['id']=='encar':
+            observed={x['listingId']:x for x in browser_items}
+            for r in out:
+                previous=next((x for x in old_records if x['id']==r['id']),{})
+                r['listingObservations']=list(previous.get('listingObservations',[]))
+                if r['listingId'] in observed:
+                    item=observed[r['listingId']]
+                    observation={k:item.get(k) for k in ['checkedAt','listingPrice','listingPriceKind','monthlyPayment','mileage','registration','modelYear','priceConflict','searchUrl']}
+                    r['lastListingObservation']=observation
+                    if not r['listingObservations'] or r['listingObservations'][-1]['checkedAt']!=observation['checkedAt']:r['listingObservations'].append(observation)
+                elif previous.get('lastListingObservation'):
+                    r['lastListingObservation']=previous['lastListingObservation']
         healthy=[r for r in out if not r['stale']]
         if success:
             status='조회 성공' if complete else '일부만 조회';note='공개 목록의 탐색 가능한 페이지 조회 완료' if complete else '공개 페이지 일부 응답. 전체 재고 조회를 보장하지 않음'
@@ -146,7 +168,10 @@ def collect_source(src,old_records,web=True,max_pages=15):
             if complete and src['parser']=='dongsung' and not targets:status='정상 검색 결과 대상 매물 없음'
         else:
             a=attempts[0] if attempts else {};status=a.get('status','접속 오류');note=a.get('note','정상 응답 없음')
+        if browser_result:
+            note='헤드리스 검색 목록 '+str(len(browser_items))+'개 후보 확인. '+browser_result.get('note','')+' 상세페이지 자동수집 허용 여부는 별도 확인.'
         info={'id':src['id'],'name':src['name'],'url':src['url'],'kind':src['kind'],'inventoryGroup':src.get('inventoryGroup',src['id']),'status':status,'note':note,'checkedAt':now(),'lastSuccess':max((r['lastSuccess'] for r in healthy),default=None),'verifiedCount':len(healthy),'listingCount':len(healthy) if complete else None,'internalSearch':{'pages':len(seen),'complete':complete},'webSearch':web_result,'attempts':attempts}
+        if browser_result:info['browserSearch']=browser_result
         return info,out,list({canonical(l['url']):l for l in leads if canonical(l['url']) not in {r['url'] for r in healthy}}.values()),prices
     except Exception as e:
         return {'id':src['id'],'name':src['name'],'url':src['url'],'kind':src['kind'],'status':'접속 오류','note':'수집기 오류: '+type(e).__name__,'checkedAt':now(),'lastSuccess':None,'verifiedCount':0,'attempts':attempts},[merge_record(r,None,now(),False) for r in old_records],[],[]
@@ -154,22 +179,27 @@ def collect_source(src,old_records,web=True,max_pages=15):
 def run(args):
     path=ROOT/'dist/data.json';old=json.loads(path.read_text()) if path.exists() else {'records':[],'sources':[],'events':[],'newCars':[],'runs':[]};started=now();selected=[s for s in SOURCES if not args.sources or s['id'] in args.sources.split(',')];results=[]
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
-        tasks={pool.submit(collect_source,s,[r for r in old['records'] if r['sourceId']==s['id']],not args.no_web,args.max_pages):s['id'] for s in selected}
+        tasks={pool.submit(collect_source,s,[r for r in old['records'] if r['sourceId']==s['id']],not args.no_web,args.max_pages,not args.no_browser):s['id'] for s in selected}
         for f in concurrent.futures.as_completed(tasks):
             r=f.result();results.append(r);print(json.dumps({'source':tasks[f],'status':r[0]['status'],'records':len(r[1]),'unverified':len(r[2])},ensure_ascii=False),flush=True)
     ids={s['id'] for s in selected};records=[r for r in old['records'] if r['sourceId'] not in ids];sources=[s for s in old['sources'] if s['id'] not in ids];leads=[l for l in old.get('leads',[]) if l.get('sourceId') not in ids];prices={p['id']:p for p in old.get('newCars',[])}
+    listing_events=[]
     for info,rs,ls,ps in results:
         if not info.get('lastSuccess'):info['lastSuccess']=next((s.get('lastSuccess') for s in old['sources'] if s['id']==info['id']),None)
+        if info['id']=='encar':
+            from .encar_browser import merge_search_history
+            ls,le=merge_search_history([l for l in old.get('leads',[]) if l.get('sourceId')=='encar'],ls,info)
+            listing_events+=le
         records+=rs;sources.append(info);leads += [dict(l,sourceId=info['id'],source=info['name']) for l in ls]
         for p in ps:prices[p['id']]=p
-    ev=changes(old['records'],records,started)
+    ev=changes(old['records'],records,started)+listing_events
     recommendations=recommendation_state(records,datetime.now(timezone.utc).year)
     if old.get('recommendations') is not None and old['recommendations']!=recommendations:
         ev.append({'at':started,'type':'추천 후보 변경','recordId':'','text':'확인된 가격·연식·주행거리·판매 상태 또는 이력 근거가 바뀌어 검토 후보 목록을 갱신했습니다.','before':old['recommendations'],'after':recommendations})
-    data={'schemaVersion':1,'updatedAt':now(),'firstRunAt':old.get('firstRunAt',started),'timezone':'Asia/Seoul','schedule':old.get('schedule',{'status':'미설정','description':'예약 실행 연결 준비 중'}),'records':records,'vehicles':group_records(records),'newCars':list(prices.values()),'sources':sorted(sources,key=lambda s:next((i for i,x in enumerate(SOURCES) if x['id']==s['id']),99)),'leads':list({(l['sourceId'],canonical(l['url'])):l for l in leads}.values()),'events':old.get('events',[])+ev,'runs':old.get('runs',[])+[{'startedAt':started,'finishedAt':now(),'sourceCount':len(selected),'newCount':len({g['id'] for g in group_records(records) if any(r['id'] not in {p['id'] for p in old['records']} and r['status']=='광고 게시 중' for r in g['offers']) and g['id'] not in {p['id'] for p in old.get('vehicles',[])}}),'priceChangeCount':sum(e['type']=='가격 변경' for e in ev)}]}
+    data={'schemaVersion':1,'updatedAt':now(),'firstRunAt':old.get('firstRunAt',started),'timezone':'Asia/Seoul','schedule':old.get('schedule',{'status':'미설정','description':'예약 실행 연결 준비 중'}),'records':records,'vehicles':group_records(records),'newCars':list(prices.values()),'sources':sorted(sources,key=lambda s:next((i for i,x in enumerate(SOURCES) if x['id']==s['id']),99)),'leads':list({(l['sourceId'],canonical(l['url'])):l for l in leads}.values()),'events':old.get('events',[])+ev,'runs':old.get('runs',[])+[{'startedAt':started,'finishedAt':now(),'sourceCount':len(selected),'newCount':len({g['id'] for g in group_records(records) if any(r['id'] not in {p['id'] for p in old['records']} and r['status']=='광고 게시 중' for r in g['offers']) and g['id'] not in {p['id'] for p in old.get('vehicles',[])}}),'priceChangeCount':sum(e['type']=='가격 변경' for e in ev),'listingNewCount':sum(e['type']=='목록 신규' for e in ev),'listingPriceChangeCount':sum(e['type']=='목록 가격 변경' for e in ev)}]}
     data['recommendations']=recommendations
     if os.environ.get('GITHUB_ACTIONS')=='true':data['schedule']={'status':'활성','description':'GitHub Actions · 매일 08:00 Asia/Seoul','workflowUrl':'https://github.com/'+os.environ['GITHUB_REPOSITORY']+'/actions/workflows/daily-collection.yml'}
     path.parent.mkdir(exist_ok=True);tmp=path.with_suffix('.tmp');tmp.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n');os.replace(tmp,path)
     print(json.dumps({'records':len(records),'groups':len(data['vehicles']),'sourceCount':len(sources),'updatedAt':data['updatedAt']},ensure_ascii=False),flush=True)
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--sources');p.add_argument('--no-web',action='store_true');p.add_argument('--max-pages',type=int,default=15);run(p.parse_args())
+    p=argparse.ArgumentParser();p.add_argument('--sources');p.add_argument('--no-browser',action='store_true');p.add_argument('--no-web',action='store_true');p.add_argument('--max-pages',type=int,default=15);run(p.parse_args())

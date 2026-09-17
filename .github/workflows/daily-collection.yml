@@ -21,6 +21,8 @@ jobs:
           cache: pip
       - name: Install collector dependencies
         run: pip install -r requirements.txt
+      - name: Install headless Chromium for dynamic searches
+        run: python -m playwright install --with-deps --only-shell chromium
       - name: Verify model, price, state and retention rules
         run: python -m unittest discover -s tests -v
       - name: Collect public listing observations

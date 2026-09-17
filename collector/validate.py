@@ -21,6 +21,16 @@ def validate(data):
    if o['kind']=='조회 실패':assert o['price'] is None
   published=json.dumps(r,ensure_ascii=False)
   assert not re.search(r'010[- ]?\d{4}[- ]?\d{4}|050[\d-]{8,}',published),r_id
+ for l in data.get('leads',[]):
+  if l.get('evidence')=='헤드리스 검색 목록 확인':
+   assert is_target(l['title'])
+   assert l['listingId'].isdigit()
+   assert l['url']=='https://fem.encar.com/cars/detail/'+l['listingId']
+   assert l['listingPrice'] is None or (isinstance(l['listingPrice'],int) and l['listingPrice']>0)
+   if l.get('monthlyPayment'):assert l['listingPrice'] is None
+   assert l['color'] is None
+   datetime.fromisoformat(l['checkedAt'])
+   assert not re.search(r'010[- ]?\d{4}[- ]?\d{4}|050[\d-]{8,}',json.dumps(l,ensure_ascii=False))
  for s in data['sources']:assert s['status'] in STATUSES,s['id']
  for p in data['newCars']:
   assert re.fullmatch(r'20\d\d-\d\d',p['effectiveMonth'])

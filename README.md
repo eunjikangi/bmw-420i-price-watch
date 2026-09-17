@@ -9,6 +9,7 @@ Python 3.11 이상:
 ```sh
 python -m venv .venv
 .venv/bin/pip install -r requirements.txt
+.venv/bin/python -m playwright install --with-deps --only-shell chromium
 .venv/bin/python -m unittest discover -s tests -v
 .venv/bin/python -m collector.run
 .venv/bin/python -m collector.validate
@@ -21,7 +22,7 @@ python -m http.server 4173 --directory dist
 
 ## 현재 자동 판독 범위
 
-- 엔카: 상세페이지에 공개된 데이터만 JSON으로 해석합니다. 코드 실행/eval/비공개 API를 사용하지 않습니다. 모델명과 컨버터블 표기를 확인합니다.
+- 엔카: Playwright Chromium headless로 실제 검색 UI의 BMW → 4시리즈 → 가솔린 → 420i 컨버터블 등급을 선택하고 페이지를 이동합니다. 쿠페/다른 엔진을 제외하고 광고 카드와 일반 표를 모두 판독합니다. 검색 목록 후보는 상세 검증과 분리합니다. 현재 상세 경로는 robots.txt에서 제한하므로 자동 접근하지 않으며 이전 상세 자료를 보존합니다. `--no-browser`로 브라우저 수집을 끌 수 있습니다.
 - KB차차차: 상세페이지의 기본정보·가격·플랫폼 진단 요약. 동적 내부 검색의 전체 자동 판독은 미완성입니다.
 - 보배드림 수입차/사이버매장: 공개 검색 폼, 제목이 일치하는 상세페이지, 광고가격·리스 조건·명시적인 판매완료 표시.
 - 동성모터스 BPS: 공개 목록 페이지와 상세정보. 실제 컨버터블 등급 확인, 리스 가격 분리.
@@ -31,6 +32,14 @@ python -m http.server 4173 --directory dist
 - 공개 웹 검색은 허용된 RSS 경로에서만 시도합니다. 검색엔진 자동 접근 제한 시 `접근 차단`을 기록하며 검색 결과 0건으로 해석하지 않습니다. 초기 조사는 별도의 공개 웹 검색으로 보완했습니다.
 
 **전체 사이트의 모든 재고를 빠짐없이 자동 수집하는 완성본은 아닙니다.** `collector/sources.json`에 출처마다 현재 경로와 파서가 명시되어 있으며, 미지원 동적 사이트는 별도 어댑터가 필요합니다. 접근 제한·로그인·CAPTCHA를 우회하지 않습니다. 출처의 DOM 구조가 바뀌면 판독 실패로 처리하며 이전 정상 자료를 보존합니다.
+
+## 비교 화면과 AI 요약
+
+표는 가격·모델연도·주행거리 오름차순/내림차순과 조건 필터를 지원합니다. 그래프는 가격 대 주행거리/연식, 연식별 관측 범위와 사고·보험 근거 분류를 보여줍니다. 미확인 가격과 금융·리스 금액은 일반 차량가격 그래프에서 제외합니다.
+
+`dist/ai-summary.json`은 작성 시점이 표시된 AI 검토 메모입니다. 가격대별 후보와 대안의 근거를 저장하고, 비교 근거가 바뀌면 추천 문구를 숨깁니다. 매일 수집기가 AI를 호출하거나 이 메모를 자동으로 다시 작성하지는 않습니다.
+
+검색 목록은 별도 표에서 광고가격·최초등록·주행거리 정렬과 지역 선택을 제공합니다. `listingObservations`는 목록 관측이고 `observations`는 상세 관측입니다. 목록의 최신 가격으로 상세 정상 확인 시각을 덮어쓰지 않습니다. 신규 목록 후보와 실제로 관측된 목록 가격 변경도 별도 이벤트로 남깁니다. 브라우저나 네트워크 오류 시 기존 목록과 시각을 보존합니다.
 
 ## 가격·기록 규칙
 
@@ -46,6 +55,8 @@ python -m http.server 4173 --directory dist
 - `collector/sources.json`: 지정된 27개 출처 경로 (첫차 두 주소는 하나로, 딜러 안내는 BMW 통합 재고와 분리 계산)
 - `collector/parsers.py`: 검증된 사이트별 필드 판독
 - `collector/run.py`: 저빈도 HTTP 요청·접근 결과·관측 병합
+- `collector/encar_browser.py`: 공개 동적 검색·페이지 이동·목록 관측
+- `collector/robots.py`: 경로별 최장 일치 robots 정책
 - `collector/model.py`: 차량 식별·금액·실패 시 보존·중복 규칙
 - `collector/validate.py`: 게시 전 개인정보·모델·가격·시간 검증
 - `dist/data.json`: 공개 관측 스냅샷과 이력
