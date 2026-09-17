@@ -34,5 +34,6 @@ jobs:
           git add dist/data.json
           if ! git diff --cached --quiet; then
             git commit -m 'Update observed BMW 420i listing data'
+            git pull --rebase origin main
             git push origin HEAD:main
           fi
