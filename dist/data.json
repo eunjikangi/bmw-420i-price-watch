@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-17T16:14:46+00:00",
+  "updatedAt": "2026-09-17T16:17:36+00:00",
   "firstRunAt": "2026-09-17T14:48:10+00:00",
   "timezone": "Asia/Seoul",
   "schedule": {
@@ -1373,7 +1373,7 @@
       ],
       "firstSeen": "2026-09-17T15:06:49+00:00",
       "lastSuccess": "2026-09-17T15:06:49+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -1454,7 +1454,7 @@
       ],
       "firstSeen": "2026-09-17T15:06:50+00:00",
       "lastSuccess": "2026-09-17T15:06:50+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -1533,7 +1533,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:06:51+00:00",
       "lastSuccess": "2026-09-17T15:06:51+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -1648,7 +1648,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:06:51+00:00",
       "lastSuccess": "2026-09-17T15:06:51+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -1764,7 +1764,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:06:52+00:00",
       "lastSuccess": "2026-09-17T15:06:52+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -1877,7 +1877,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:06:53+00:00",
       "lastSuccess": "2026-09-17T15:06:53+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -1992,7 +1992,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:06:54+00:00",
       "lastSuccess": "2026-09-17T15:06:54+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -2105,7 +2105,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:06:55+00:00",
       "lastSuccess": "2026-09-17T15:06:55+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -2218,7 +2218,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:06:56+00:00",
       "lastSuccess": "2026-09-17T15:06:56+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -2331,7 +2331,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:06:56+00:00",
       "lastSuccess": "2026-09-17T15:06:56+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -2444,7 +2444,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:06:57+00:00",
       "lastSuccess": "2026-09-17T15:06:57+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -2559,7 +2559,7 @@
       ],
       "firstSeen": "2026-09-17T15:06:58+00:00",
       "lastSuccess": "2026-09-17T15:06:58+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -2673,7 +2673,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:06:59+00:00",
       "lastSuccess": "2026-09-17T15:06:59+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -2786,7 +2786,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:06:59+00:00",
       "lastSuccess": "2026-09-17T15:06:59+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -2899,7 +2899,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:00+00:00",
       "lastSuccess": "2026-09-17T15:07:00+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -3012,7 +3012,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:01+00:00",
       "lastSuccess": "2026-09-17T15:07:01+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -3125,7 +3125,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:02+00:00",
       "lastSuccess": "2026-09-17T15:07:02+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -3238,7 +3238,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:03+00:00",
       "lastSuccess": "2026-09-17T15:07:03+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -3351,7 +3351,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:03+00:00",
       "lastSuccess": "2026-09-17T15:07:03+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -3464,7 +3464,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:04+00:00",
       "lastSuccess": "2026-09-17T15:07:04+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -3577,7 +3577,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:05+00:00",
       "lastSuccess": "2026-09-17T15:07:05+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -3690,7 +3690,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:06+00:00",
       "lastSuccess": "2026-09-17T15:07:06+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -3803,7 +3803,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:07+00:00",
       "lastSuccess": "2026-09-17T15:07:07+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -3918,7 +3918,7 @@
       ],
       "firstSeen": "2026-09-17T15:07:07+00:00",
       "lastSuccess": "2026-09-17T15:07:07+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -4032,7 +4032,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:08+00:00",
       "lastSuccess": "2026-09-17T15:07:08+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -4145,7 +4145,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:09+00:00",
       "lastSuccess": "2026-09-17T15:07:09+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -4258,7 +4258,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:10+00:00",
       "lastSuccess": "2026-09-17T15:07:10+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -4373,7 +4373,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:11+00:00",
       "lastSuccess": "2026-09-17T15:07:11+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -4486,7 +4486,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:11+00:00",
       "lastSuccess": "2026-09-17T15:07:11+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -4601,7 +4601,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:12+00:00",
       "lastSuccess": "2026-09-17T15:07:12+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -4714,7 +4714,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:13+00:00",
       "lastSuccess": "2026-09-17T15:07:13+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -4827,7 +4827,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:14+00:00",
       "lastSuccess": "2026-09-17T15:07:14+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -4940,7 +4940,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:15+00:00",
       "lastSuccess": "2026-09-17T15:07:15+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -5053,7 +5053,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:15+00:00",
       "lastSuccess": "2026-09-17T15:07:15+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -5166,7 +5166,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:16+00:00",
       "lastSuccess": "2026-09-17T15:07:16+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -5279,7 +5279,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:17+00:00",
       "lastSuccess": "2026-09-17T15:07:17+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -5392,7 +5392,7 @@
       "warnings": [],
       "firstSeen": "2026-09-17T15:07:18+00:00",
       "lastSuccess": "2026-09-17T15:07:18+00:00",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "stale": true,
       "observations": [
         {
@@ -6892,7 +6892,7 @@
           ],
           "firstSeen": "2026-09-17T15:07:07+00:00",
           "lastSuccess": "2026-09-17T15:07:07+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -7016,7 +7016,7 @@
           ],
           "firstSeen": "2026-09-17T15:06:49+00:00",
           "lastSuccess": "2026-09-17T15:06:49+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -7103,7 +7103,7 @@
           ],
           "firstSeen": "2026-09-17T15:06:50+00:00",
           "lastSuccess": "2026-09-17T15:06:50+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -7188,7 +7188,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:06:51+00:00",
           "lastSuccess": "2026-09-17T15:06:51+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -7301,7 +7301,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:07+00:00",
           "lastSuccess": "2026-09-17T15:07:07+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -7422,7 +7422,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:06:51+00:00",
           "lastSuccess": "2026-09-17T15:06:51+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -7544,7 +7544,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:06:52+00:00",
           "lastSuccess": "2026-09-17T15:06:52+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -7663,7 +7663,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:06:53+00:00",
           "lastSuccess": "2026-09-17T15:06:53+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -7784,7 +7784,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:06:54+00:00",
           "lastSuccess": "2026-09-17T15:06:54+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -7897,7 +7897,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:01+00:00",
           "lastSuccess": "2026-09-17T15:07:01+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -8010,7 +8010,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:03+00:00",
           "lastSuccess": "2026-09-17T15:07:03+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -8129,7 +8129,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:06:55+00:00",
           "lastSuccess": "2026-09-17T15:06:55+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -8242,7 +8242,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:06:56+00:00",
           "lastSuccess": "2026-09-17T15:06:56+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -8361,7 +8361,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:06:56+00:00",
           "lastSuccess": "2026-09-17T15:06:56+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -8474,7 +8474,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:06:57+00:00",
           "lastSuccess": "2026-09-17T15:06:57+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -8595,7 +8595,7 @@
           ],
           "firstSeen": "2026-09-17T15:06:58+00:00",
           "lastSuccess": "2026-09-17T15:06:58+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -8715,7 +8715,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:06:59+00:00",
           "lastSuccess": "2026-09-17T15:06:59+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -8828,7 +8828,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:06:59+00:00",
           "lastSuccess": "2026-09-17T15:06:59+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -8947,7 +8947,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:00+00:00",
           "lastSuccess": "2026-09-17T15:07:00+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -9060,7 +9060,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:02+00:00",
           "lastSuccess": "2026-09-17T15:07:02+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -9179,7 +9179,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:03+00:00",
           "lastSuccess": "2026-09-17T15:07:03+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -9298,7 +9298,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:04+00:00",
           "lastSuccess": "2026-09-17T15:07:04+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -9411,7 +9411,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:06+00:00",
           "lastSuccess": "2026-09-17T15:07:06+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -9530,7 +9530,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:05+00:00",
           "lastSuccess": "2026-09-17T15:07:05+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -9649,7 +9649,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:08+00:00",
           "lastSuccess": "2026-09-17T15:07:08+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -9762,7 +9762,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:09+00:00",
           "lastSuccess": "2026-09-17T15:07:09+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -9881,7 +9881,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:10+00:00",
           "lastSuccess": "2026-09-17T15:07:10+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -10002,7 +10002,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:11+00:00",
           "lastSuccess": "2026-09-17T15:07:11+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -10117,7 +10117,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:12+00:00",
           "lastSuccess": "2026-09-17T15:07:12+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -10236,7 +10236,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:11+00:00",
           "lastSuccess": "2026-09-17T15:07:11+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -10355,7 +10355,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:13+00:00",
           "lastSuccess": "2026-09-17T15:07:13+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -10468,7 +10468,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:15+00:00",
           "lastSuccess": "2026-09-17T15:07:15+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -10587,7 +10587,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:14+00:00",
           "lastSuccess": "2026-09-17T15:07:14+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -10700,7 +10700,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:16+00:00",
           "lastSuccess": "2026-09-17T15:07:16+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -10819,7 +10819,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:15+00:00",
           "lastSuccess": "2026-09-17T15:07:15+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -10938,7 +10938,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:17+00:00",
           "lastSuccess": "2026-09-17T15:07:17+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -11051,7 +11051,7 @@
           "warnings": [],
           "firstSeen": "2026-09-17T15:07:18+00:00",
           "lastSuccess": "2026-09-17T15:07:18+00:00",
-          "checkedAt": "2026-09-17T16:14:46+00:00",
+          "checkedAt": "2026-09-17T16:17:36+00:00",
           "stale": true,
           "observations": [
             {
@@ -11155,7 +11155,7 @@
       "inventoryGroup": "encar",
       "status": "일부만 조회",
       "note": "헤드리스 검색 목록 0개 후보 확인. 검색 화면 열기 단계: TimeoutError: Locator.wait_for: Timeout 15000ms exceeded. 상세페이지 자동수집 허용 여부는 별도 확인.",
-      "checkedAt": "2026-09-17T16:14:46+00:00",
+      "checkedAt": "2026-09-17T16:17:36+00:00",
       "lastSuccess": "2026-09-17T15:07:18+00:00",
       "verifiedCount": 0,
       "listingCount": null,
@@ -11171,244 +11171,244 @@
       "attempts": [
         {
           "url": "https://car.encar.com/list/car?page=1&search=%7B%22type%22%3A%22car%22%2C%22action%22%3A%22%28And.Hidden.N._.MultiViewHidden.N._.%28C.CarType.A._.%28C.Manufacturer.BMW._.ModelGroup.4%EC%8B%9C%EB%A6%AC%EC%A6%88.%29%29%29%22%2C%22sort%22%3A%22MobileModifiedDate%22%7D",
-          "at": "2026-09-17T16:14:25+00:00",
+          "at": "2026-09-17T16:17:16+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로",
           "http": null
         },
         {
           "url": "https://www.encar.com/",
-          "at": "2026-09-17T16:14:28+00:00",
+          "at": "2026-09-17T16:17:18+00:00",
           "status": "조회 성공",
           "http": 200,
           "scope": "목록·안내 페이지 응답"
         },
         {
           "url": "https://www.encar.com/",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접속 오류",
           "scope": "Playwright 검색 목록",
           "note": "검색 화면 열기 단계: TimeoutError: Locator.wait_for: Timeout 15000ms exceeded."
         },
         {
           "url": "https://fem.encar.com/cars/detail/42305837",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42096119",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42657891?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42393132?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42477383?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42423646?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42629900?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42027621?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42027463?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42731273?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42729965?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42591884?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42736566?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42728048?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42745691?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42662540?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42738159?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42661505?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42241085?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42538991?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42397710?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42537165?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42664135?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42461299?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42422329?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42420249?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42563166?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42358250?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42158277?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42350403?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42172624?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42302207?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42171964?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42217098?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42301227?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42176336?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         },
         {
           "url": "https://fem.encar.com/cars/detail/42174724?type=detail",
-          "at": "2026-09-17T16:14:46+00:00",
+          "at": "2026-09-17T16:17:36+00:00",
           "status": "접근 차단",
           "note": "robots.txt에서 자동 수집을 허용하지 않은 경로"
         }
@@ -11425,10 +11425,11 @@
           "pageTitle": "엔카",
           "filterCount": 0,
           "failedRequests": [],
-          "badResponses": []
+          "badResponses": [],
+          "emptySearchMessage": "엔카\n서비스 이용 제한됨\n\n시스템에서 비정상적인 트래픽이 감지되어\n현재 접속이 제한되었습니다.\n\n이용에 불편을 드려 진심으로 사과 드리며, 문제가 지속되는 경우\n고객센터(1599-5455)로 문의해주시기 바랍니다.\n\n홈으로"
         },
         "listingCount": 0,
-        "checkedAt": "2026-09-17T16:14:46+00:00"
+        "checkedAt": "2026-09-17T16:17:36+00:00"
       }
     },
     {
@@ -12491,7 +12492,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -12549,7 +12550,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -12607,7 +12608,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -12665,7 +12666,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -12723,7 +12724,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -12781,7 +12782,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -12839,7 +12840,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -12897,7 +12898,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -12955,7 +12956,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -13013,7 +13014,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -13071,7 +13072,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -13129,7 +13130,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -13187,7 +13188,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -13245,7 +13246,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -13303,7 +13304,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -13354,7 +13355,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -13412,7 +13413,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -13470,7 +13471,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:14+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:14+00:00",
@@ -13528,7 +13529,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:14+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:14+00:00",
@@ -13586,7 +13587,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:14+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:14+00:00",
@@ -13637,7 +13638,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -13688,7 +13689,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -13746,7 +13747,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:14+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:14+00:00",
@@ -13804,7 +13805,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -13855,7 +13856,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -13906,7 +13907,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -13964,7 +13965,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -14015,7 +14016,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -14066,7 +14067,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -14117,7 +14118,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -14168,7 +14169,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -14219,7 +14220,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -14270,7 +14271,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -14321,7 +14322,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -14372,7 +14373,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -14423,7 +14424,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -14474,7 +14475,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -14525,7 +14526,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -14576,7 +14577,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -14627,7 +14628,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -14678,7 +14679,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:13+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:13+00:00",
@@ -14729,7 +14730,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:14+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:14+00:00",
@@ -14780,7 +14781,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:14+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:14+00:00",
@@ -14831,7 +14832,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:14+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:14+00:00",
@@ -14882,7 +14883,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:14+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:14+00:00",
@@ -14933,7 +14934,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:14+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:14+00:00",
@@ -14984,7 +14985,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:14+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:14+00:00",
@@ -15035,7 +15036,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:14+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:14+00:00",
@@ -15086,7 +15087,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:14+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:14+00:00",
@@ -15137,7 +15138,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:14+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:14+00:00",
@@ -15188,7 +15189,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:14+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:14+00:00",
@@ -15239,7 +15240,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:14+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:14+00:00",
@@ -15290,7 +15291,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:14+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:14+00:00",
@@ -15348,7 +15349,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:14+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:14+00:00",
@@ -15399,7 +15400,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:14+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:14+00:00",
@@ -15450,7 +15451,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:14+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:14+00:00",
@@ -15501,7 +15502,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:14+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:14+00:00",
@@ -15552,7 +15553,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:14+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:14+00:00",
@@ -15610,7 +15611,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -15668,7 +15669,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -15726,7 +15727,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -15784,7 +15785,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -15842,7 +15843,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -15893,7 +15894,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -15951,7 +15952,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -16009,7 +16010,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -16060,7 +16061,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -16118,7 +16119,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -16176,7 +16177,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -16234,7 +16235,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -16292,7 +16293,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -16350,7 +16351,7 @@
       ],
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -16401,7 +16402,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -16452,7 +16453,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -16503,7 +16504,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -16554,7 +16555,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -16605,7 +16606,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -16656,7 +16657,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -16707,7 +16708,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -16758,7 +16759,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -16809,7 +16810,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -16860,7 +16861,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -16911,7 +16912,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -16962,7 +16963,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -17013,7 +17014,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -17064,7 +17065,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -17115,7 +17116,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -17166,7 +17167,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -17217,7 +17218,7 @@
       "note": "검색 목록 관측. 상세페이지·사고·보험·보증·외장색 검증 전이며 현재 판매 확정 아님.",
       "firstSeen": "2026-09-17T15:56:16+00:00",
       "stale": true,
-      "searchCheckedAt": "2026-09-17T16:14:46+00:00",
+      "searchCheckedAt": "2026-09-17T16:17:36+00:00",
       "listingObservations": [
         {
           "checkedAt": "2026-09-17T15:56:16+00:00",
@@ -19359,6 +19360,15 @@
     {
       "startedAt": "2026-09-17T16:14:23+00:00",
       "finishedAt": "2026-09-17T16:14:46+00:00",
+      "sourceCount": 1,
+      "newCount": 0,
+      "priceChangeCount": 0,
+      "listingNewCount": 0,
+      "listingPriceChangeCount": 0
+    },
+    {
+      "startedAt": "2026-09-17T16:17:14+00:00",
+      "finishedAt": "2026-09-17T16:17:36+00:00",
       "sourceCount": 1,
       "newCount": 0,
       "priceChangeCount": 0,
