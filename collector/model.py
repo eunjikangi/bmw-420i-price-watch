@@ -17,13 +17,13 @@ def money(text):
 
 def canonical(url):
     p=urlparse(url);q=parse_qs(p.query)
-    keep={k:v[-1] for k,v in q.items() if k.lower() not in {'pageid','view_type','adv_attribute','wtclick_forlist','advclickposition','tempht_arg','listadvtype','fbclid','gclid'} and not k.startswith('utm_')}
+    keep={k:v[-1] for k,v in q.items() if k.lower() not in {'pageid','view_type','adv_attribute','wtclick_forlist','advclickposition','tempht_arg','listadvtype','viewtype','fbclid','gclid'} and not k.startswith('utm_')}
     # Both Boba listing channels may point to the same underlying listing URL.
     return urlunparse(('https',p.netloc.lower(),p.path,'',urlencode(sorted(keep.items())),''))
 
 def key(source,url):
     q=parse_qs(urlparse(url).query)
-    for k in ['carSeq','idx','no','carid']:
+    for k in ['carSeq','idx','no','carid','id','DemoNo','it_id','i_sCarCd','sDemoNo']:
         if q.get(k): return source+':'+q[k][0]
     return source+':'+urlparse(url).path.rstrip('/').split('/')[-1]
 

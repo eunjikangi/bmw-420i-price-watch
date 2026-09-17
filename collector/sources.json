@@ -31,7 +31,11 @@
     "name": "케이카",
     "kind": "중고차",
     "url": "https://www.kcar.com/",
-    "parser": "structured"
+    "parser": "kcar",
+    "seeds": [
+      "https://www.kcar.com/br/detail/brandCarInfoDtl?i_sCarCd=BC61409584",
+      "https://www.kcar.com/br/detail/brandCarInfoDtl?i_sCarCd=BC61406894"
+    ]
   },
   {
     "id": "boba",
@@ -129,7 +133,7 @@
     "name": "코오롱 인증중고차 702",
     "kind": "BMW 인증",
     "url": "https://702prime.com/",
-    "parser": "structured"
+    "parser": "kolon"
   },
   {
     "id": "danawa-used",
@@ -150,7 +154,10 @@
     "name": "엠파크",
     "kind": "중고차",
     "url": "https://www.m-park.co.kr/buy/search",
-    "parser": "structured"
+    "parser": "mpark",
+    "seeds": [
+      "https://www.m-park.co.kr/buy/detail/6061500368"
+    ]
   },
   {
     "id": "daangn",

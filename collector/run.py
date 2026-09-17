@@ -97,6 +97,23 @@ def official_prices(s,url):
     return out
 
 def collect_source(src,old_records,web=True,max_pages=15,browser=True):
+    if browser and src['id']!='encar':
+        from .browser_sources import collect_browser_source
+        info,rs,ls,ps=collect_browser_source(src,old_records,FETCH,max_pages)
+        web_leads,web_result=search_web(src) if web and src['parser']!='guide' else ([],{'status':'미실행','note':'웹 검색 생략'})
+        info['webSearch']=web_result;ls+=web_leads
+        if src['parser'] in ['boba','dongsung','guide']:
+            http_info,http_rs,http_ls,http_ps=collect_source(src,old_records,False,max_pages,False)
+            # Static pagination complements rendered pages; retain successful detail evidence from either path.
+            by_id={r['id']:r for r in http_rs}
+            for r in rs:
+                if not r['stale'] or r['id'] not in by_id:by_id[r['id']]=r
+            rs=list(by_id.values());ls+=http_ls;ps+=http_ps;info['attempts']+=http_info['attempts']
+            info['verifiedCount']=sum(not r['stale'] for r in rs)
+            if http_info.get('internalSearch',{}).get('complete'):
+                info['internalSearch']=http_info['internalSearch'];info['status']=http_info['status'];info['note']+=' 공개 HTML 페이지 이동으로 탐색 범위 보완.'
+            info['lastSuccess']=max((r['lastSuccess'] for r in rs if not r['stale']),default=http_info.get('lastSuccess'))
+        return info,rs,list({canonical(l['url']):l for l in ls}.values()),ps
     out=[];leads=[];attempts=[];prices=[];success=False;complete=False;browser_items=[];browser_result=None
     queue=list(dict.fromkeys(src.get('searchUrls',[])+[src['url']]));seen=set();targets={canonical(u):{'url':u,'title':'기존 상세페이지','evidence':'기존 기록'} for u in src.get('seeds',[])}
     for r in old_records:targets[r['url']]={'url':r['url'],'title':r['model'],'evidence':'기존 기록'}
@@ -186,10 +203,13 @@ def run(args):
     ids={s['id'] for s in selected};records=[r for r in old['records'] if r['sourceId'] not in ids];sources=[s for s in old['sources'] if s['id'] not in ids];leads=[l for l in old.get('leads',[]) if l.get('sourceId') not in ids];prices={p['id']:p for p in old.get('newCars',[])}
     listing_events=[]
     for info,rs,ls,ps in results:
+        previous_source=next((s for s in old['sources'] if s['id']==info['id']),{})
+        if previous_source.get('publicWebReview'):info['publicWebReview']=previous_source['publicWebReview']
+        info['executionEnvironment']='GitHub Actions' if os.environ.get('GITHUB_ACTIONS')=='true' else '로컬 Chromium'
         if not info.get('lastSuccess'):info['lastSuccess']=next((s.get('lastSuccess') for s in old['sources'] if s['id']==info['id']),None)
-        if info['id']=='encar':
+        if any(l.get('evidence')=='헤드리스 검색 목록 확인' for l in ls) or any(l.get('sourceId')==info['id'] and l.get('evidence')=='헤드리스 검색 목록 확인' for l in old.get('leads',[])):
             from .encar_browser import merge_search_history
-            ls,le=merge_search_history([l for l in old.get('leads',[]) if l.get('sourceId')=='encar'],ls,info)
+            ls,le=merge_search_history([l for l in old.get('leads',[]) if l.get('sourceId')==info['id']],ls,info)
             listing_events+=le
         records+=rs;sources.append(info);leads += [dict(l,sourceId=info['id'],source=info['name']) for l in ls]
         for p in ps:prices[p['id']]=p

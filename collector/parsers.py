@@ -1,5 +1,6 @@
 """Site-specific parsers only promote fields actually present in a listing's detail section."""
 import json,re
+from urllib.parse import unquote
 from bs4 import BeautifulSoup
 from .model import base,is_target,money,identity
 
@@ -28,6 +29,7 @@ def description(s,label):
 
 def common(r,fields,desc):
     r['color']=fields.get('색상') or fields.get('차량색상')
+    if r['color'] in ['정보없음','인기색상','미확인','기타']:r['color']=None
     r['interior']=fields.get('시트색상')
     if r['interior'] in ['정보없음','없음']:r['interior']=None
     r['mileage']=integer(r'([\d,]+)\s*km',fields.get('주행거리') or fields.get('주행') or '')
@@ -63,9 +65,25 @@ def parse_kb(s,src,url):
     r['seller']=rx(r'((?:\S+차매매단지)[^ ]*)',area)
     r['certification']='KB진단' if s.select_one('.car-buy-price') and 'KB진단 Report' in text(s) else None
     whole=text(s)
-    if '판금/용접 0회 교환 0회' in whole:
-        r['inspection']='플랫폼 진단 요약 확인';r['inspectionFacts']=['KB진단 표시: 판금/용접 0회, 교환 0회','성능점검기록부 원본은 별도 확인 필요']
+    diag=re.search(r'판금/용접\s*(\d+)회\s*교환\s*(\d+)회',whole)
+    if diag:
+        r['inspection']='플랫폼 진단 요약 확인';r['inspectionFacts']=[f'KB진단 표시: 판금/용접 {diag[1]}회, 교환 {diag[2]}회','성능점검기록부 원본은 별도 확인 필요']
+        if int(diag[1]) or int(diag[2]):r['repair']=f'플랫폼 진단 요약: 판금/용접 {diag[1]}회, 교환 {diag[2]}회'
+        for marker in s.select('[data-index] .ico[class*="mark_"]'):
+            if 'display:none' in (marker.get('style') or '').replace(' ',''):continue
+            if not marker.get('style'):continue
+            part=marker.parent.select_one('.blind')
+            if part:r['inspectionFacts'].append('KB진단 표시: '+text(part)+' '+text(marker))
+    doc=s.select_one('[data-link-url][id^="btnCarCheck"]')
+    if doc:
+        inspection_url=doc.get('data-link-url') or ''
+        # Some providers embed a vehicle plate in their URL. Keep those links on the source page.
+        if re.search(r'\d{2,3}[가-힣]\d{4}',unquote(inspection_url)):
+            r['warnings'].append('성능기록부 링크에 차량 식별정보가 포함되어 원 판매페이지에서 확인')
+        elif inspection_url.startswith('https://'):r['inspectionUrl']=inspection_url
+    r['insuranceDetails']='공개 보험 건수·요약 확인. 상세 보험 처리금액·수리내역은 로그인 필요' if r.get('insuranceCount') is not None else None
     r['insuranceCount']=integer(r'보험이력\s*(\d+)건',whole)
+    if r['insuranceCount'] is not None:r['insuranceDetails']='공개 보험 건수·요약 확인. 상세 보험 처리금액·수리내역은 로그인 필요'
     r['insuranceAsOf']=rx(r'보험사고정보 조회일자\s*:\s*([\d.]+)',whole)
     hist=whole[whole.find('성능점검·보험사고이력정보'):whole.find('주행거리분석')]
     r['usage']=rx(r'용도이력\s*(없음|있음)',hist);r['owners']=rx(r'소유자변경\s*(없음|\d+회)',hist)
@@ -195,4 +213,117 @@ def parse_getcha_new(s,url,at):
         if amount is None or ('기본가격' not in label and '실구매가' not in label):continue
         kind='플랫폼 기재 기본가격' if '기본가격' in label else '광고 할인가 · 구매조건 미확인'
         out.append({'id':'getcha-'+month+'-'+('base' if '기본가격' in label else 'discount'),'source':'겟차','sourceId':'getcha','url':url,'trim':'M Sport Pro P1' if '프로' in title else 'M Sport','model':'420i 컨버터블','price':amount,'priceKind':kind,'effectiveMonth':month,'checkedAt':at,'stock':'흰색 재고 미확인','conditions':'플랫폼의 모의견적 자료. 현금 구매·실출고 재고 견적 미확인. 월납입금과 별도.'})
+    return out
+
+def parse_kcar(s,src,url):
+    title=text(s.select_one('h2.carName'))
+    if not is_target(title):return None
+    r=base(src,url,title);t=text(s);head=t[t.find(title):t.find('차량 예상 가격')]
+    r['price']=money(head);r['identityKey']=identity(rx(r'(\d{2,3}[가-힣]\d{4})',head))
+    reg=re.search(r'(\d{2})년\s*(\d{1,2})월식',head)
+    if reg:r['registration']='20'+reg[1]+'-'+reg[2].zfill(2)
+    r['mileage']=integer(r'([\d,]+)km',head)
+    r['color']=rx(r'km\s*가솔린\s*(.+?)\s*오토',head)
+    r['seller']=rx(r'차량판매자\s*(.+?)\s*0\d',head)
+    r['region']=rx(r'브랜드인증\s*(\S+)',head)
+    r['certification']='BMW BPS · 케이카 브랜드 인증관'
+    r['saleMethod']='리스 승계·종류 미확인' if '리스차량' in head else '일반 판매 광고'
+    if '리스차량' in head:r['priceKind']='리스 광고금액';r['warnings'].append('리스 총비용 확인 필요. 설명의 금융 예시는 확정 승계 조건이 아님.')
+    desc=t[t.find('차량 소개'):t.find('꼭! 알아두세요')]
+    r['modelYear']=integer(r'\((\d{2})MY\)',desc)
+    if r['modelYear']:r['modelYear']+=2000
+    year=integer(r'\((\d{2})년형\)',head)
+    if year:r['modelYear']=year+2000
+    if re.search(r'\bLCI\b',desc):r['facelift']='부분변경 후 · 판매자 원문 LCI'
+    r['interior']='판매자 설명: '+rx(r'(블랙|베이지|브라운|레드)\s*시트',desc) if rx(r'(블랙|베이지|브라운|레드)\s*시트',desc) else None
+    if re.search(r'무사고',desc):r['sellerClaims'].append('판매자 설명: 무사고')
+    r['inspection']='공식딜러 72항목 진단 표시 · 사진 기록부 원본 미판독'
+    r['inspectionFacts']=['케이카 브랜드 인증관의 공식딜러 제공 진단 표시. 원본 기재내용 미확인']
+    hist=t[t.find('보험이력으로 더욱'):t.find('차량 소개')]
+    own=integer(r'내차\s*피해\s*(\d+)건',hist);other=integer(r'상대차\s*피해\s*(\d+)건',hist)
+    r['insuranceCount']=own+other if own is not None and other is not None else None
+    r['insuranceDetails']=f'플랫폼 공개 요약: 내차 {own}건 / 상대차 {other}건. 보험 원본·수리금액 미확인' if r['insuranceCount'] is not None else None
+    r['owners']=rx(r'소유자 변경\s*(\d+건)',hist);r['usage']=rx(r'용도 변경 이력\s*(없음|있음)',hist)
+    r['manufacturerWarranty']='판매자 설명: '+rx(r'(신차 보증.{0,55})',desc) if rx(r'(신차 보증.{0,55})',desc) else None
+    r['serviceRemaining']='판매자 설명: '+rx(r'(BSI.{0,55})',desc) if rx(r'(BSI.{0,55})',desc) else None
+    r['warnings'].append('보험 0건·진단 표시는 무도색 또는 루프 정상 확인이 아님')
+    return r
+
+def parse_kolon(s,src,url):
+    title=text(s.select_one('article.title-lg'))
+    if not is_target(title):return None
+    r=base(src,url,title);t=re.sub(r'(\d)\s+(회|건|원)',r'\1\2',text(s)).replace('( ','(');head=t[t.find(title):t.find('판매자 정보')]
+    r['price']=money(rx(r'차량 가격\s*([\d,]+원)',t) or '')
+    r['modelYear']=integer(r'(20\d{2})년형',head);r['registration']=(rx(r'최초등록\s*(20\d\d[.\-]\d\d)',head) or '').replace('.','-') or None
+    r['mileage']=integer(r'([\d,]+)km',head);r['color']=rx(r'외관컬러\s*(\S+)',head);r['identityKey']=identity(rx(r'(\d{2,3}[가-힣]\d{4})',head))
+    r['region']=rx(r'가솔린\s*(서울|경기|경남|대전|대구|광주|부산|인천)',head);r['seller']='코오롱 BPS '+(rx(r'BPS_(\S+)',t) or '');r['certification']='BMW BPS · 코오롱 인증중고차'
+    own=integer(r'내차피해\s*(\d+)회',head);other=integer(r'타차피해\s*(\d+)회',head)
+    r['insuranceCount']=own+other if own is not None and other is not None else None
+    a=integer(r'내차피해\s*\d+회\s*\(([\d,]+)원\)',head);c=integer(r'타차피해\s*\d+회\s*\(([\d,]+)원\)',head)
+    r['insuranceAmount']=a+c if a is not None and c is not None else None
+    if a is not None:r['insuranceDetails']=f'플랫폼 공개 요약: 내차 {own}회 ({a:,}원) / 타차 {other}회 ({c:,}원). 세부 수리 부위 미확인' if c is not None else f'내차 {own}회 ({a:,}원)'
+    r['owners']=rx(r'소유자 변경\s*(\d+회)',head);r['usage']=rx(r'용도 변경 이력\s*(없음|있음)',head)
+    desc=t[t.find('판매자 정보'):t.rfind('차량 점검 상세보기')]
+    if '무사고' in desc:r['sellerClaims'].append('판매자 설명: 무사고')
+    for pat,label in [('타이어.*교체','타이어 최근 교체'),('점화플러그.*교체','점화플러그 최근 교체'),('블랙.*시트','실내 블랙 시트')]:
+        if re.search(pat,desc):r['sellerClaims'].append('판매자 설명: '+label)
+    if '블랙 시트' in desc or '블랙(내장' in desc:r['interior']='판매자 설명: 블랙'
+    if 'BPS 보증 가입 지원' in desc:r['certifiedWarranty']='판매자 설명: BPS 보증 가입 지원 (1년 또는 2만km). 실제 가입·개시·제외조건 미확인'
+    diag=t[t.rfind('차량 점검 상세보기'):t.find('구매비용 계산기')]
+    for label in ['내외관 상태','외부패널 진단','주요프레임 진단']:
+        m=rx(label+r'\s*((?:(?:양호|흠집|깨짐|정상|교환|판금|용접)\s*\d+건\s*)+)',diag)
+        if m:r['inspectionFacts'].append('플랫폼 점검 요약: '+label+' '+m.strip())
+    if r['inspectionFacts']:r['inspection']='플랫폼 점검 요약 확인 · 성능기록부 원본 미확인'
+    r['manufacturerWarranty']=rx(r'제조사 보증\s*(.+?)(?:구매비용|리스 정보|$)',diag)
+    if r['manufacturerWarranty']:r['warnings'].append('보증 잔여 수치는 플랫폼 표시. 표시 날짜·거리 기준이 불일치할 수 있어 재확인 필요')
+    if re.search(r'차량 가격\s*[\d,]+원',t):r['saleMethod']='일반 판매 광고'
+    if '리스 정보' in t or re.search(r'리스방식\s*(금융|운용)',t):r['saleMethod']='리스 승계·종류 미확인';r['priceKind']='리스 광고금액';r['warnings'].append('총비용 확인 필요')
+    extra=integer(r'이전 등록 관련 부가비용\s*([\d,]+)원',t)
+    if extra is not None:r['extraCostEstimate']={'amount':extra,'basis':'판매 사이트의 취등록세·공채 할인비 등 예상치. 적용 기준·최종 비용 미확인','confirmed':False}
+    r['warnings'].append('보험처리 금액·외부패널 진단만으로 무도색·루프 정상 여부를 확정하지 않음')
+    return r
+PARSERS['kcar']=parse_kcar
+PARSERS['kolon']=parse_kolon
+
+def parse_mpark(s,src,url):
+    title=text(s.select_one('title'))
+    if not is_target(title):return None
+    t=text(s);r=base(src,url,title);r['price']=money(rx(r'판매가격\s*([\d,]+\s*만원)',t) or '')
+    if r['price'] is None:return None
+    r['mileage']=integer(r'([\d,]+)km',t);r['modelYear']=2000+int(rx(r'연식\s*\d{2}년\d{2}월\((\d{2})년형\)',t)) if rx(r'연식\s*\d{2}년\d{2}월\((\d{2})년형\)',t) else None
+    reg=rx(r'연식\s*(\d{2}년\d{2}월)',t)
+    if reg:r['registration']='20'+reg[:2]+'-'+reg[3:5]
+    r['identityKey']=identity(rx(r'차량정보\s*(\d{2,3}[가-힣]\d{4})',t));r['seller']=rx(r'상사명\s*(.+?)\s*상사주소',t);r['region']=rx(r'상사주소\s*(\S+\s+\S+)',t)
+    color=(rx(r'색상\s*(.+?)\s*압류',t) or '').strip();r['color']=color if color and len(color)<20 else None
+    r['saleMethod']='일반 판매 광고 · 직접매도' if '직접매도' in t else '구매 조건 미확인'
+    diag=t[t.find('81가지 차량 점검 완료!'):t.find('성능점검기록부 보기')]
+    for label in ['사고(단순수리제외)','단순수리','교환','판금/용접','용도변경','침수']:
+        v=rx(re.escape(label)+r'\s*(없음|무|있음|유|\d+회)',diag)
+        if v:r['inspectionFacts'].append('엠파크 점검 요약: '+label+' '+v)
+    if r['inspectionFacts']:r['inspection']='플랫폼 점검 요약 확인 · 원본 미확인'
+    hist=t[t.find('성능점검기록부 보기'):t.find('보험처리이력 보기')]
+    r['insuranceAsOf']=rx(r'점검일\s*:\s*(20\d\d년\s*\d\d월\s*\d\d일)',hist)
+    own=integer(r'내차피해\s*(\d+)회',hist);other=integer(r'타차피해\s*(\d+)회',hist)
+    r['insuranceCount']=own+other if own is not None and other is not None else None
+    r['insuranceDetails']=' / '.join(re.findall(r'(?:내차피해|타차피해)\s*\d+회\s*\([\d,]+원\)',hist)) or None
+    r['owners']=rx(r'소유자 변경\s*(\d+회)',hist);r['usage']=rx(r'용도 변경 이력\s*(없음|있음)',hist)
+    if re.search(r'저당\s*[1-9]\d*회',t):r['warnings'].append('공개 정보에 저당 '+rx(r'저당\s*(\d+회)',t)+' 표시. 인도 전 말소 조건 확인 필요')
+    r['warnings']+=['보험·성능 자료 기준일 확인 필요. 보험 0건은 무도색·루프 정상 확정이 아님','외장색이 빈칸이면 사진으로 색상을 추정하지 않음']
+    return r
+PARSERS['mpark']=parse_mpark
+
+def parse_danawa_new(s,url,at):
+    out=[]
+    for heading in s.select('dt.price_title'):
+        label=text(heading);period=re.search(r'(20\d\d)\.(\d\d)\.(\d\d)',label)
+        year=integer(r'(20\d\d)년형',label)
+        if not period or '컨버터블 가솔린 2.0' not in label:continue
+        listing=heading.find_next_sibling('dd')
+        if not listing:continue
+        for item in listing.select('li'):
+            model=text(item.select_one('label'));price=money(text(item.select_one('.item.price')));ident=item.select_one('input[value]')
+            if not is_target(model) or not price or not ident:continue
+            out.append({'id':'danawa-'+ident['value'],'source':'다나와 자동차','sourceId':'danawa-new','url':url,'model':'420i 컨버터블','trim':model.replace('420i Convertible','').strip(),'modelYear':year,
+             'price':price,'priceKind':'플랫폼 기재 모델별 가격표','effectiveMonth':period[1]+'-'+period[2],'pricePeriodKind':'가격표 적용 시작','validFrom':'-'.join(period.groups()),'checkedAt':at,
+             'stock':'흰색 재고 미확인','conditions':'사이트에 표시된 가격표 적용 시작일 기준. 할인·금융 조건·현금 견적·출고 재고 확인과 별개. P1/P2/P2-0 사양을 구분.'})
     return out

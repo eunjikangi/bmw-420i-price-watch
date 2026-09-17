@@ -1,241 +1,332 @@
 {
-  "generatedAt": "2026-09-17T16:19:12+00:00",
-  "dataAt": "2026-09-17T16:17:36+00:00",
-  "title": "연식·주행거리 균형은 4천만원대, 흰색 저주행은 6천만원대를 먼저 비교하세요.",
-  "context": "공개된 가격과 제원을 바탕으로 고른 검토 후보입니다. 최종 현금가격·이력·보증·루프 상태가 모두 확인된 구매 확정 추천은 아닙니다.",
+  "generatedAt": "2026-09-17T17:17:38+00:00",
+  "dataAt": "2026-09-17T17:11:07+00:00",
+  "title": "흰색 저주행은 5천만원대부터, 4천만원대는 보험 수리 내역을 먼저 비교하세요.",
+  "context": "이번에 상세 조회에 성공한 광고 중에서 고른 검토 후보입니다. 모든 금액은 관측 광고가격이며 금융 가입 없는 현금가격·추가비용·루프 상태는 확정되지 않았습니다.",
   "bands": [
     {
       "label": "4천만원 미만",
-      "tag": "구입가격 우선",
+      "tag": "흰색 · 유지비 검토",
       "min": 0,
       "max": 40000000,
       "primary": {
-        "id": "encar:42241085",
+        "id": "kb:28395544",
         "basis": {
           "price": 32000000,
           "priceKind": "광고 판매가격",
-          "saleMethod": "일반 판매 광고",
+          "saleMethod": "구매 조건 미확인",
           "modelYear": 2021,
-          "mileage": 128300,
+          "mileage": 127863,
           "color": "흰색",
           "trim": "M Sport",
-          "insuranceCount": null,
+          "insuranceCount": 0,
           "repair": null,
-          "accident": null,
+          "accident": "판매자 설명: 완전 무사고라고 설명, 무사고라고 설명",
           "inspection": "미확인",
-          "status": "접근불가",
-          "stale": true,
-          "manufacturerWarranty": null,
+          "status": "광고 게시 중",
+          "stale": false,
+          "manufacturerWarranty": "제조사 보증 정보 차체/일반 (0km / 2년) 보증종료 / 보증종료 엔진/주요 (60,000km / 3년) 보증종료 / 보증종료",
           "certifiedWarranty": null,
           "roof": null,
           "registration": "2021-05",
           "facelift": null,
-          "sellerClaims": [],
+          "sellerClaims": [
+            "완전 무사고라고 설명",
+            "무사고라고 설명"
+          ],
           "inspectionFacts": [],
-          "insuranceDetails": null,
-          "insuranceAsOf": null,
-          "usage": null,
-          "owners": null,
+          "insuranceDetails": "공개 보험 건수·요약 확인. 상세 보험 처리금액·수리내역은 로그인 필요",
+          "insuranceAsOf": "2026.05.28",
+          "usage": "있음",
+          "owners": "2회",
           "serviceRemaining": null,
-          "priceConflict": false
+          "priceConflict": false,
+          "insuranceAmount": null,
+          "cashConfirmed": false,
+          "extraCosts": null,
+          "extraCostEstimate": null,
+          "certification": null,
+          "warnings": [
+            "보증 잔여 수치는 원문 자동계산 표시이며 실제 잔여 여부 재확인 필요"
+          ]
         },
-        "reason": "흰색을 유지하면서 구입가격을 낮출 수 있는 후보입니다. 낮은 광고가격의 가장 큰 차이는 높은 주행거리입니다.",
-        "caution": "12만 km를 넘었습니다. 정비 내역·소모품·루프 점검과 실제 판매 가능 여부를 우선 확인해야 합니다."
+        "reason": "3,200만원의 흰색 2021년형입니다. 구입가격을 낮추려는 경우 비교할 후보지만 127,863km의 주행거리와 공개된 용도 이력을 함께 봐야 합니다.",
+        "caution": "용도 이력 있음·소유자 변경 2회가 공개되어 있습니다. 어떤 용도였는지는 미확인입니다. 제조사 보증은 종료 표시이며 성능기록 원본·정비·루프 점검이 필요합니다. 보험 0건이 무사고·무도색을 보장하지 않습니다."
       },
-      "verdict": "정비 이력 확인 전에는 저렴하다는 이유만으로 추천하지 않습니다."
+      "verdict": "정비 예산과 용도 이력을 확인할 수 있을 때 검토할 후보입니다."
     },
     {
       "label": "4천만원대",
-      "tag": "연식·주행거리 균형",
+      "tag": "흰색 BPS · 수리 내역 확인",
       "min": 40000000,
       "max": 50000000,
       "primary": {
-        "id": "encar:42477383",
+        "id": "kolon:21441",
         "basis": {
           "price": 46000000,
           "priceKind": "광고 판매가격",
           "saleMethod": "일반 판매 광고",
           "modelYear": 2023,
-          "mileage": 57011,
+          "mileage": 56949,
           "color": "흰색",
           "trim": "M Sport",
-          "insuranceCount": null,
+          "insuranceCount": 4,
           "repair": null,
           "accident": null,
-          "inspection": "엔카 직영 성능점검 표시 · 원본 미확인",
-          "status": "접근불가",
-          "stale": true,
-          "manufacturerWarranty": null,
-          "certifiedWarranty": null,
+          "inspection": "플랫폼 점검 요약 확인 · 성능기록부 원본 미확인",
+          "status": "광고 게시 중",
+          "stale": false,
+          "manufacturerWarranty": "일반/차체: 2년/무제한 만료 / 만료 동력계통 주요부품: 3년/6만 Km 만료 / 만료 친환경 주요부품(배출가스/배터리): 5년/8만 Km 1년 5개월 (2028.02.17) / 만료 ",
+          "certifiedWarranty": "판매자 설명: BPS 보증 가입 지원 (1년 또는 2만km). 실제 가입·개시·제외조건 미확인",
           "roof": null,
           "registration": "2023-02",
           "facelift": null,
           "sellerClaims": [
-            "광고 설명: 무사고",
-            "광고 설명: 1인 소유"
+            "판매자 설명: 무사고",
+            "판매자 설명: 타이어 최근 교체",
+            "판매자 설명: 점화플러그 최근 교체",
+            "판매자 설명: 실내 블랙 시트"
           ],
-          "inspectionFacts": [],
-          "insuranceDetails": null,
+          "inspectionFacts": [
+            "플랫폼 점검 요약: 내외관 상태 양호 23건 흠집 0건 깨짐 0건",
+            "플랫폼 점검 요약: 외부패널 진단 정상 9건 교환 0건 판금 0건 용접 0건",
+            "플랫폼 점검 요약: 주요프레임 진단 정상 24건 교환 0건 판금 0건 용접 0건"
+          ],
+          "insuranceDetails": "플랫폼 공개 요약: 내차 4회 (4,121,611원) / 타차 0회 (0원). 세부 수리 부위 미확인",
           "insuranceAsOf": null,
-          "usage": null,
-          "owners": null,
+          "usage": "없음",
+          "owners": "0회",
           "serviceRemaining": null,
-          "priceConflict": false
+          "priceConflict": false,
+          "insuranceAmount": 4121611,
+          "cashConfirmed": false,
+          "extraCosts": null,
+          "extraCostEstimate": {
+            "amount": 3225000,
+            "basis": "판매 사이트의 취등록세·공채 할인비 등 예상치. 적용 기준·최종 비용 미확인",
+            "confirmed": false
+          },
+          "certification": "BMW BPS · 코오롱 인증중고차",
+          "warnings": [
+            "보증 잔여 수치는 플랫폼 표시. 표시 날짜·거리 기준이 불일치할 수 있어 재확인 필요",
+            "보험처리 금액·외부패널 진단만으로 무도색·루프 정상 여부를 확정하지 않음"
+          ]
         },
-        "reason": "2023년형 흰색 후보입니다. 3천만원대 흰색 후보보다 연식이 최근이고 주행거리가 적어 함께 비교할 가치가 있습니다.",
-        "caution": "성능점검 표시만 확인했습니다. 기록부 원본·보험 이력·실판매 여부는 재확인이 필요합니다."
+        "reason": "4,600만원·2023년형·56,949km의 흰색 코오롱 BPS 후보입니다. 플랫폼 패널·프레임 진단은 교환·판금·용접 0건으로 표시되지만 보험처리는 별도로 4건이 공개됩니다.",
+        "caution": "내차 보험 4건·총 4,121,611원의 수리 부위를 확인해야 합니다. 일반·동력계 보증은 만료 표시이고 BPS 보증 가입 지원은 판매자 설명입니다. 이전등록 예상비용 322만5천원은 차량가격과 별개이며 확정 금액이 아닙니다."
       },
       "alternative": {
-        "id": "encar:42420249",
+        "id": "kb:28441277",
         "basis": {
-          "price": 45900000,
-          "priceKind": "광고 판매가격",
-          "saleMethod": "일반 판매 광고",
-          "modelYear": 2023,
-          "mileage": 12482,
-          "color": "하늘색",
-          "trim": "M Sport",
-          "insuranceCount": null,
-          "repair": null,
-          "accident": null,
-          "inspection": "진단 표시 확인 · 원본 미확인",
-          "status": "접근불가",
-          "stale": true,
-          "manufacturerWarranty": null,
-          "certifiedWarranty": null,
-          "roof": null,
-          "registration": "2023-02",
-          "facelift": null,
-          "sellerClaims": [],
-          "inspectionFacts": [],
-          "insuranceDetails": null,
-          "insuranceAsOf": null,
-          "usage": null,
-          "owners": null,
-          "serviceRemaining": null,
-          "priceConflict": false
-        },
-        "reason": "같은 2023년형에 광고가격은 10만원 낮고 주행거리는 약 4.45만 km 적습니다. 하늘색을 허용하면 제원상 우위가 뚜렷한 대안입니다.",
-        "caution": "상태·보험·보증이 확인되지 않아 낮은 주행거리만으로 차량 상태 우위를 확정할 수 없습니다."
-      },
-      "verdict": "색상을 열어두면 하늘색 대안부터 재확인할 만합니다."
-    },
-    {
-      "label": "5천만원대",
-      "tag": "흰색·최근 연식",
-      "min": 50000000,
-      "max": 60000000,
-      "primary": {
-        "id": "boba:2265371",
-        "basis": {
-          "price": 58000000,
+          "price": 44400000,
           "priceKind": "광고 판매가격",
           "saleMethod": "구매 조건 미확인",
-          "modelYear": 2025,
-          "mileage": 16752,
-          "color": "흰색",
+          "modelYear": 2023,
+          "mileage": 25883,
+          "color": "브루클린그레이",
           "trim": "M Sport",
           "insuranceCount": 2,
           "repair": null,
-          "accident": null,
-          "inspection": "미확인",
+          "accident": "판매자 설명: 무사고라고 설명",
+          "inspection": "플랫폼 진단 요약 확인",
           "status": "광고 게시 중",
           "stale": false,
-          "manufacturerWarranty": "원문 기본정보: 불가",
+          "manufacturerWarranty": "제조사 보증 정보 차체/일반 (0km / 2년) 보증종료 / 보증종료 엔진/주요 (60,000km / 3년) 보증종료 / 보증종료",
+          "certifiedWarranty": null,
+          "roof": null,
+          "registration": "2022-10",
+          "facelift": null,
+          "sellerClaims": [
+            "무사고라고 설명"
+          ],
+          "inspectionFacts": [
+            "KB진단 표시: 판금/용접 0회, 교환 0회",
+            "성능점검기록부 원본은 별도 확인 필요"
+          ],
+          "insuranceDetails": "공개 보험 건수·요약 확인. 상세 보험 처리금액·수리내역은 로그인 필요",
+          "insuranceAsOf": "2026.06.10",
+          "usage": "없음",
+          "owners": "1회",
+          "serviceRemaining": null,
+          "priceConflict": false,
+          "insuranceAmount": null,
+          "cashConfirmed": false,
+          "extraCosts": null,
+          "extraCostEstimate": null,
+          "certification": "KB진단",
+          "warnings": [
+            "보증 잔여 수치는 원문 자동계산 표시이며 실제 잔여 여부 재확인 필요",
+            "성능기록부 링크에 차량 식별정보가 포함되어 원 판매페이지에서 확인"
+          ]
+        },
+        "reason": "브루클린그레이를 허용하면 4,440만원·2023년형·25,883km가 대안입니다. 위 흰색 후보보다 160만원 낮고 주행거리는 31,066km 적습니다.",
+        "caution": "보험 2건·소유자 변경 1회가 공개되어 있습니다. 보험 금액·수리 상세는 로그인 확인이 필요하고 제조사 보증은 종료 표시입니다. 같은 M Sport여도 실제 옵션·상태가 동일하다는 뜻은 아닙니다."
+      },
+      "verdict": "흰색 BPS의 보증 가입 조건과 회색 대안의 보험 수리 범위를 대조하세요."
+    },
+    {
+      "label": "5천만원대",
+      "tag": "흰색 · 저주행 우선",
+      "min": 50000000,
+      "max": 60000000,
+      "primary": {
+        "id": "kb:28643511",
+        "basis": {
+          "price": 56900000,
+          "priceKind": "광고 판매가격",
+          "saleMethod": "구매 조건 미확인",
+          "modelYear": 2025,
+          "mileage": 7426,
+          "color": "흰색",
+          "trim": "M Sport",
+          "insuranceCount": 0,
+          "repair": null,
+          "accident": "판매자 설명: 무사고라고 설명",
+          "inspection": "플랫폼 진단 요약 확인",
+          "status": "광고 게시 중",
+          "stale": false,
+          "manufacturerWarranty": "제조사 보증 정보 차체/일반 (0km / 2년) 보증종료 / 보증종료 엔진/주요 (60,000km / 3년) 52,574km / 11개월 남음",
           "certifiedWarranty": null,
           "roof": null,
           "registration": "2024-08",
           "facelift": null,
-          "sellerClaims": [],
-          "inspectionFacts": [],
-          "insuranceDetails": "내차 1회 (3,540,623원) / 타차 1회 (755,349원)",
-          "insuranceAsOf": null,
-          "usage": null,
-          "owners": "2회",
+          "sellerClaims": [
+            "무사고라고 설명"
+          ],
+          "inspectionFacts": [
+            "KB진단 표시: 판금/용접 0회, 교환 0회",
+            "성능점검기록부 원본은 별도 확인 필요"
+          ],
+          "insuranceDetails": "공개 보험 건수·요약 확인. 상세 보험 처리금액·수리내역은 로그인 필요",
+          "insuranceAsOf": "2026.08.07",
+          "usage": "없음",
+          "owners": "없음",
           "serviceRemaining": null,
-          "priceConflict": false
+          "priceConflict": false,
+          "insuranceAmount": null,
+          "cashConfirmed": false,
+          "extraCosts": null,
+          "extraCostEstimate": null,
+          "certification": "KB진단",
+          "warnings": [
+            "보증 잔여 수치는 원문 자동계산 표시이며 실제 잔여 여부 재확인 필요"
+          ]
         },
-        "reason": "2025년형 흰색·1만 km대 차량이며 마지막 정상 조회에서 광고를 확인했습니다. 연식과 주행거리 조건이 맞는 중간 가격대 후보입니다.",
-        "caution": "보험처리 2건(내차 약 354만원·타차 약 76만원)과 소유자 변경 2회가 공개되어 있습니다. 제조사 보증은 원문에 불가로 표시됩니다. 수리 부위·범위와 보증 조건을 우선 확인하세요."
+        "reason": "5,690만원·2025년형·7,426km의 흰색 M Sport입니다. 이번에 상세 확인한 후보 중 최근 연식과 낮은 주행거리를 함께 원하는 경우 먼저 비교할 만합니다.",
+        "caution": "M Sport Pro가 아닙니다. 보험 0건·진단 교환/판금 0회는 루프 상태나 무도색의 확정 근거가 아닙니다. 일반 보증은 종료 표시, 주요부품은 52,574km·11개월 잔여 표시로 실제 적용 여부를 재확인해야 합니다."
       },
-      "verdict": "보험 수리 내역이 구매 판단의 핵심입니다."
+      "alternative": {
+        "id": "kb:28687949",
+        "basis": {
+          "price": 53900000,
+          "priceKind": "광고 판매가격",
+          "saleMethod": "구매 조건 미확인",
+          "modelYear": 2024,
+          "mileage": 17978,
+          "color": "흰색",
+          "trim": "M Sport",
+          "insuranceCount": 0,
+          "repair": null,
+          "accident": "판매자 설명: 완전 무사고라고 설명, 무사고라고 설명",
+          "inspection": "플랫폼 진단 요약 확인",
+          "status": "광고 게시 중",
+          "stale": false,
+          "manufacturerWarranty": "제조사 보증 정보 차체/일반 (0km / 2년) 보증종료 / 보증종료 엔진/주요 (60,000km / 3년) 42,022km / 1개월 남음",
+          "certifiedWarranty": null,
+          "roof": null,
+          "registration": "2023-10",
+          "facelift": null,
+          "sellerClaims": [
+            "완전 무사고라고 설명",
+            "무사고라고 설명"
+          ],
+          "inspectionFacts": [
+            "KB진단 표시: 판금/용접 0회, 교환 0회",
+            "성능점검기록부 원본은 별도 확인 필요"
+          ],
+          "insuranceDetails": "공개 보험 건수·요약 확인. 상세 보험 처리금액·수리내역은 로그인 필요",
+          "insuranceAsOf": "2026.08.22",
+          "usage": "없음",
+          "owners": "없음",
+          "serviceRemaining": null,
+          "priceConflict": false,
+          "insuranceAmount": null,
+          "cashConfirmed": false,
+          "extraCosts": null,
+          "extraCostEstimate": null,
+          "certification": "KB진단",
+          "warnings": [
+            "보증 잔여 수치는 원문 자동계산 표시이며 실제 잔여 여부 재확인 필요"
+          ]
+        },
+        "reason": "흰색 M Sport 5,390만원·2024년형·17,978km도 함께 볼 만합니다. 300만원을 줄이는 대신 모델연도가 1년 이전이고 10,552km 더 주행했습니다.",
+        "caution": "보험 0건·진단 교환/판금 0회가 공개되어 있지만 루프·정비 이력은 미확인입니다. 일반 보증은 종료, 주요부품 보증은 1개월 잔여로 표시되어 보증과 정비 비용을 먼저 확인하세요."
+      },
+      "verdict": "저주행 우선은 5,690만원, 구입가격 절감은 5,390만원을 비교하세요."
     },
     {
       "label": "6천만원대",
-      "tag": "흰색·저주행 후보",
+      "tag": "흰색 · M Sport Pro",
       "min": 60000000,
       "max": 70000000,
       "primary": {
-        "id": "encar:42393132",
-        "basis": {
-          "price": 62500000,
-          "priceKind": "광고 판매가격",
-          "saleMethod": "일반 판매 광고",
-          "modelYear": 2025,
-          "mileage": 6783,
-          "color": "흰색",
-          "trim": "M Sport Pro",
-          "insuranceCount": null,
-          "repair": null,
-          "accident": null,
-          "inspection": "진단 표시 확인 · 원본 미확인",
-          "status": "접근불가",
-          "stale": true,
-          "manufacturerWarranty": null,
-          "certifiedWarranty": null,
-          "roof": null,
-          "registration": "2025-08",
-          "facelift": null,
-          "sellerClaims": [
-            "광고 설명: 무사고"
-          ],
-          "inspectionFacts": [],
-          "insuranceDetails": null,
-          "insuranceAsOf": null,
-          "usage": null,
-          "owners": null,
-          "serviceRemaining": null,
-          "priceConflict": false
-        },
-        "reason": "흰색 M Sport Pro 중 1만 km 미만 후보입니다. 높은 연식만 좇기보다 광고가격과 주행거리를 함께 비교할 때 먼저 볼 만합니다.",
-        "caution": "보험·보증 잔여·루프 상태와 현재 판매 가능 여부가 미확인입니다. 신차 수준의 상태라는 뜻은 아닙니다."
-      },
-      "alternative": {
-        "id": "encar:42301227",
+        "id": "kb:28525540",
         "basis": {
           "price": 64500000,
           "priceKind": "광고 판매가격",
-          "saleMethod": "일반 판매 광고",
+          "saleMethod": "구매 조건 미확인",
           "modelYear": 2026,
-          "mileage": 6062,
+          "mileage": 6043,
           "color": "흰색",
           "trim": "M Sport Pro",
-          "insuranceCount": null,
+          "insuranceCount": 0,
           "repair": null,
-          "accident": null,
-          "inspection": "진단 표시 확인 · 원본 미확인",
-          "status": "접근불가",
-          "stale": true,
-          "manufacturerWarranty": null,
+          "accident": "판매자 설명: 완전 무사고라고 설명, 무사고라고 설명",
+          "inspection": "플랫폼 진단 요약 확인",
+          "status": "광고 게시 중",
+          "stale": false,
+          "manufacturerWarranty": "제조사 보증 정보 차체/일반 (0km / 2년) 제한없음 / 12개월 남음 엔진/주요 (60,000km / 3년) 53,957km / 24개월 남음",
           "certifiedWarranty": null,
           "roof": null,
           "registration": "2025-10",
           "facelift": null,
-          "sellerClaims": [],
-          "inspectionFacts": [],
-          "insuranceDetails": null,
-          "insuranceAsOf": null,
-          "usage": null,
-          "owners": null,
+          "sellerClaims": [
+            "완전 무사고라고 설명",
+            "무사고라고 설명"
+          ],
+          "inspectionFacts": [
+            "KB진단 표시: 판금/용접 0회, 교환 0회",
+            "성능점검기록부 원본은 별도 확인 필요"
+          ],
+          "insuranceDetails": "공개 보험 건수·요약 확인. 상세 보험 처리금액·수리내역은 로그인 필요",
+          "insuranceAsOf": "2026.07.03",
+          "usage": "없음",
+          "owners": "없음",
           "serviceRemaining": null,
-          "priceConflict": false
+          "priceConflict": false,
+          "insuranceAmount": null,
+          "cashConfirmed": false,
+          "extraCosts": null,
+          "extraCostEstimate": null,
+          "certification": "KB진단",
+          "warnings": [
+            "보증 잔여 수치는 원문 자동계산 표시이며 실제 잔여 여부 재확인 필요"
+          ]
         },
-        "reason": "광고가격을 200만원 더 쓰면 2026년형·6,062km의 같은 M Sport Pro 표기 후보도 있습니다.",
-        "caution": "모델연도만으로 장비가 같다고 보지 않습니다. 실제 옵션과 최초등록일·보증을 대조해야 합니다."
+        "reason": "6,450만원·2026년형·6,043km의 흰색 M Sport Pro입니다. 5,690만원 후보보다 760만원 높으며 트림과 모델연도가 달라 옵션·보증의 가치를 따로 판단해야 합니다.",
+        "caution": "보험 0건·진단 교환/판금 0회 표기입니다. 플랫폼에는 일반 12개월·주요부품 24개월 잔여로 표시되지만 실제 보증을 보장하지 않습니다. 현금 구매조건·옵션·루프 점검을 확인해야 합니다."
       },
-      "verdict": "저주행을 우선하면 6,250만원 후보부터 재확인하세요."
+      "verdict": "Pro 사양과 실제 남은 보증이 추가 760만원의 가치가 있는지 확인하세요."
     }
   ],
-  "unranked": "7천만원 이상은 현재 자료에서 추가 금액을 정당화할 근거가 충분한 후보를 고르지 않았습니다. 전체 비교에는 예산 상한을 두지 않습니다.",
-  "leaseNote": "5,490만원 동성모터스 BPS 매물은 리스 광고금액이므로 이 가격대별 일반 판매 후보와 같은 총구매가격으로 비교하지 않았습니다."
+  "findings": [
+    "KB차차차 29개, 코오롱 BPS 1개, 엠파크 1개 상세를 이번 조회에서 확인했습니다. 다나와 제휴의 엠파크 동일 차량은 한 대로 묶고 출처별 기록을 남겼습니다.",
+    "흰색 저주행 우선 후보를 2025년형 5,690만원·7,426km로 변경했습니다. 흰색 5,390만원·17,978km도 대안으로 추가했습니다. 두 차량 모두 M Sport이며 Pro와 구분합니다.",
+    "4,600만원 흰색 BPS에는 보험처리 4건·약 412만원이 공개되어 있습니다. 플랫폼 교환·판금 0건 표시와 보험 수리 이력은 별개의 근거입니다.",
+    "3,390만원·2023년형 엠파크 매물은 144,088km이며 저당 1회가 표시됩니다. 색상은 미확인입니다. 낮은 광고가격만으로 흰색 가성비 추천에 넣지 않았습니다.",
+    "신차는 다나와의 2026년형 가격표 7,790만~8,140만원과 겟차 9월 광고 할인가 7,500만원을 구분했습니다. P1·P2·P2-0 사양, 공식 가격 확인 여부, 구매조건과 흰색 재고는 따로 확인해야 합니다.",
+    "엔카 89개·차란차 10개 검색 목록은 상세 검증 자료와 분리했습니다. 로그인·보안 확인·자동수집 제한이 남은 출처는 현재 판매 중인 상세 검증 매물로 승격하지 않았습니다."
+  ],
+  "unranked": "가격대는 비교를 돕는 구간이며 예산 상한이 아닙니다. 7천만원 이상도 전체 표·그래프에서 볼 수 있습니다. 보험 건수·연식·주행거리만으로 사고 정도나 기계 상태를 단정하지 않습니다.",
+  "leaseNote": "5,490만원 동성모터스 BPS 매물은 리스 광고금액입니다. 잔여 납입·인수금 등 필수 조건을 확인하지 못해 일반 판매 후보와 같은 총구매가격으로 순위를 매기지 않았습니다. 케이카 인증관 후보도 상세 접근 제한으로 추천에서 제외했습니다."
 }

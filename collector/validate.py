@@ -1,5 +1,6 @@
 """Reject unsafe/invalid snapshots before publication; no network or model calls."""
 import json,re
+from urllib.parse import unquote
 from pathlib import Path
 from datetime import datetime
 from .model import is_target,STATUSES
@@ -19,13 +20,17 @@ def validate(data):
   for o in r['observations']:
    assert datetime.fromisoformat(o['at'])>=datetime.fromisoformat(r['firstSeen'])
    if o['kind']=='조회 실패':assert o['price'] is None
-  published=json.dumps(r,ensure_ascii=False)
+  published=unquote(json.dumps(r,ensure_ascii=False))
   assert not re.search(r'010[- ]?\d{4}[- ]?\d{4}|050[\d-]{8,}',published),r_id
+  assert not re.search(r'\d{2,3}[가-힣]\d{4}',published),r_id
  for l in data.get('leads',[]):
   if l.get('evidence')=='헤드리스 검색 목록 확인':
    assert is_target(l['title'])
-   assert l['listingId'].isdigit()
-   assert l['url']=='https://fem.encar.com/cars/detail/'+l['listingId']
+   assert l['listingId']
+   if l['sourceId']=='encar':
+    assert l['listingId'].isdigit()
+    assert l['url']=='https://fem.encar.com/cars/detail/'+l['listingId']
+   else:assert l['url'].startswith('https://')
    assert l['listingPrice'] is None or (isinstance(l['listingPrice'],int) and l['listingPrice']>0)
    if l.get('monthlyPayment'):assert l['listingPrice'] is None
    assert l['color'] is None

@@ -21,10 +21,10 @@ def merge_search_history(previous,current,info):
         if prior and not history:history=[{k:prior.get(k) for k in OBSERVATION_FIELDS}]
         if not history or history[-1]['checkedAt']!=observation['checkedAt']:history.append(observation)
         item.update(firstSeen=prior.get('firstSeen',prior['checkedAt']) if prior else item['checkedAt'],stale=False,searchCheckedAt=info['checkedAt'],listingObservations=history)
-        event={'at':item['checkedAt'],'sourceId':'encar','listingId':rid,'url':item['url'],'recordId':'','scope':'검색 목록'}
-        if prior is None:events.append(dict(event,type='목록 신규',text='엔카 '+rid+' · 검색 목록 최초 발견. 상세 검증 전.'))
+        event={'at':item['checkedAt'],'sourceId':info.get('id',item.get('sourceId','encar')),'listingId':rid,'url':item['url'],'recordId':'','scope':'검색 목록'}
+        if prior is None:events.append(dict(event,type='목록 신규',text=info.get('name',item.get('source','엔카'))+' '+rid+' · 검색 목록 최초 발견. 상세 검증 전.'))
         elif prior.get('listingPrice') is not None and item.get('listingPrice') is not None and prior['listingPrice']!=item['listingPrice'] and not prior.get('priceConflict') and not item.get('priceConflict') and prior.get('listingPriceKind')==item.get('listingPriceKind'):
-            events.append(dict(event,type='목록 가격 변경',text='엔카 '+rid+' · 검색 목록 광고금액 변경. 실거래가 아님.',before=prior['listingPrice'],after=item['listingPrice']))
+            events.append(dict(event,type='목록 가격 변경',text=info.get('name',item.get('source','엔카'))+' '+rid+' · 검색 목록 광고금액 변경. 실거래가 아님.',before=prior['listingPrice'],after=item['listingPrice']))
         result.append(item)
     for rid,prior in old.items():
         if rid in seen:continue
