@@ -1,0 +1,220 @@
+[
+  {
+    "id": "encar",
+    "name": "엔카",
+    "kind": "중고차",
+    "url": "https://www.encar.com/",
+    "searchUrls": [
+      "https://car.encar.com/list/car?page=1&search=%7B%22type%22%3A%22car%22%2C%22action%22%3A%22%28And.Hidden.N._.MultiViewHidden.N._.%28C.CarType.A._.%28C.Manufacturer.BMW._.ModelGroup.4%EC%8B%9C%EB%A6%AC%EC%A6%88.%29%29%29%22%2C%22sort%22%3A%22MobileModifiedDate%22%7D"
+    ],
+    "parser": "encar",
+    "seeds": [
+      "https://fem.encar.com/cars/detail/42305837",
+      "https://fem.encar.com/cars/detail/42096119"
+    ]
+  },
+  {
+    "id": "kb",
+    "name": "KB차차차",
+    "kind": "중고차",
+    "url": "https://www.kbchachacha.com/",
+    "searchUrls": [
+      "https://www.kbchachacha.com/public/search/main.kbc"
+    ],
+    "parser": "kb",
+    "seeds": [
+      "https://www.kbchachacha.com/public/car/detail.kbc?carSeq=28392138"
+    ]
+  },
+  {
+    "id": "kcar",
+    "name": "케이카",
+    "kind": "중고차",
+    "url": "https://www.kcar.com/",
+    "parser": "structured"
+  },
+  {
+    "id": "boba",
+    "name": "보배드림 수입차",
+    "kind": "중고차",
+    "url": "https://www.bobaedream.co.kr/mycar/mycar_list.php?gubun=I",
+    "searchUrls": [
+      "https://www.bobaedream.co.kr/mycar/mycar_list.php?group_no=809&gubun=I&level_no%5B%5D=15531&maker_no=1&model_no%5B%5D=2369&order=S11&page=1&view_size=20"
+    ],
+    "parser": "boba"
+  },
+  {
+    "id": "boba-cyber",
+    "name": "보배드림 사이버매장",
+    "kind": "중고차",
+    "url": "https://www.bobaedream.co.kr/cyber/CyberCar.php?gubun=I",
+    "parser": "boba"
+  },
+  {
+    "id": "charancha",
+    "name": "차란차",
+    "kind": "중고차",
+    "url": "https://charancha.com/",
+    "parser": "structured"
+  },
+  {
+    "id": "autobell",
+    "name": "오토벨",
+    "kind": "중고차",
+    "url": "https://autobell.co.kr/",
+    "parser": "structured"
+  },
+  {
+    "id": "reborncar",
+    "name": "리본카",
+    "kind": "중고차",
+    "url": "https://www.reborncar.co.kr/",
+    "parser": "structured"
+  },
+  {
+    "id": "autoinside",
+    "name": "오토인사이드",
+    "kind": "중고차",
+    "url": "https://www.autoinside.co.kr/",
+    "parser": "structured"
+  },
+  {
+    "id": "heydealer",
+    "name": "헤이딜러 내차사기",
+    "kind": "중고차",
+    "url": "https://www.heydealer.com/market/cars",
+    "parser": "structured"
+  },
+  {
+    "id": "tcar",
+    "name": "롯데렌터카 T car",
+    "kind": "중고차",
+    "url": "https://tcar.lotterentacar.net/",
+    "parser": "structured"
+  },
+  {
+    "id": "chutcha",
+    "name": "첫차",
+    "kind": "중고차",
+    "url": "https://www.chutcha.net/",
+    "searchUrls": [
+      "https://web.chutcha.net/"
+    ],
+    "parser": "structured"
+  },
+  {
+    "id": "bmw-bps",
+    "name": "BMW 공식 인증중고차 통합 검색",
+    "kind": "BMW 인증",
+    "url": "https://www.bmw.co.kr/ko-kr/sl/usedcarfinder",
+    "parser": "structured"
+  },
+  {
+    "id": "dongsung",
+    "name": "동성모터스 BPS",
+    "kind": "BMW 인증",
+    "url": "https://www.bpsdongsung.co.kr/product/",
+    "parser": "dongsung",
+    "pagination": true
+  },
+  {
+    "id": "bavarian",
+    "name": "바바리안모터스 BPS",
+    "kind": "BMW 인증",
+    "url": "https://www.bavarian-bps.co.kr/",
+    "parser": "structured"
+  },
+  {
+    "id": "kolon",
+    "name": "코오롱 인증중고차 702",
+    "kind": "BMW 인증",
+    "url": "https://702prime.com/",
+    "parser": "structured"
+  },
+  {
+    "id": "danawa-used",
+    "name": "다나와 자동차 중고차",
+    "kind": "중고차",
+    "url": "https://auto.danawa.com/usedcar/",
+    "parser": "structured"
+  },
+  {
+    "id": "autohub",
+    "name": "오토허브",
+    "kind": "중고차",
+    "url": "https://www.autohub.co.kr/",
+    "parser": "structured"
+  },
+  {
+    "id": "mpark",
+    "name": "엠파크",
+    "kind": "중고차",
+    "url": "https://www.m-park.co.kr/buy/search",
+    "parser": "structured"
+  },
+  {
+    "id": "daangn",
+    "name": "당근 중고차",
+    "kind": "중고차",
+    "url": "https://www.daangn.com/",
+    "parser": "structured"
+  },
+  {
+    "id": "deutsch",
+    "name": "도이치모터스 BPS 안내",
+    "kind": "보완 경로",
+    "url": "https://www.deutschmotors.com/page/bmw-premium-selection",
+    "parser": "guide",
+    "inventoryGroup": "bmw-bps"
+  },
+  {
+    "id": "handok",
+    "name": "한독모터스 BPS 안내",
+    "kind": "보완 경로",
+    "url": "https://www.bmwhandok.co.kr/page/bmw-premium-selection",
+    "parser": "guide",
+    "inventoryGroup": "bmw-bps"
+  },
+  {
+    "id": "samchully",
+    "name": "삼천리모터스 BPS 안내",
+    "kind": "보완 경로",
+    "url": "https://www.samchullymotors.co.kr/page/bmw-premium-selection",
+    "parser": "guide",
+    "inventoryGroup": "bmw-bps"
+  },
+  {
+    "id": "bmw-new",
+    "name": "BMW 코리아 신차",
+    "kind": "신차",
+    "url": "https://www.bmw.co.kr/",
+    "parser": "new",
+    "searchUrls": [
+      "https://www.bmw.co.kr/ko/all-models/4-series/4-series-cabrio/bmw-4-series-convertible.html"
+    ]
+  },
+  {
+    "id": "bmw-shop",
+    "name": "BMW 샵 온라인",
+    "kind": "신차",
+    "url": "https://shop.bmw.co.kr/",
+    "parser": "new"
+  },
+  {
+    "id": "danawa-new",
+    "name": "다나와 자동차 신차",
+    "kind": "신차",
+    "url": "https://auto.danawa.com/",
+    "parser": "new"
+  },
+  {
+    "id": "getcha",
+    "name": "겟차",
+    "kind": "신차",
+    "url": "https://web.getcha.kr/",
+    "parser": "new",
+    "searchUrls": [
+      "https://web.getcha.kr/blog/estimate-bmw-4-series-18247"
+    ]
+  }
+]

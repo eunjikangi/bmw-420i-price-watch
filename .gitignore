@@ -1,0 +1,8 @@
+.env*
+!.env.example
+__pycache__/
+*.pyc
+.venv/
+.sites-runtime/
+collector/cache/
+collector/runs/
