@@ -4,6 +4,11 @@ on:
     # 23:00 UTC is 08:00 on the following calendar day in Asia/Seoul.
     - cron: '0 23 * * *'
   workflow_dispatch:
+    inputs:
+      sources:
+        description: 'Optional comma-separated source IDs; empty collects all sources'
+        required: false
+        type: string
 permissions:
   contents: write
 concurrency:
@@ -26,7 +31,14 @@ jobs:
       - name: Verify model, price, state and retention rules
         run: python -m unittest discover -s tests -v
       - name: Collect public listing observations
-        run: python -m collector.run
+        env:
+          COLLECTION_SOURCES: ${{ inputs.sources || '' }}
+        run: |
+          if [ -n "$COLLECTION_SOURCES" ]; then
+            python -m collector.run --sources "$COLLECTION_SOURCES"
+          else
+            python -m collector.run
+          fi
       - name: Validate public dataset
         run: python -m collector.validate
       - name: Publish observed data to the existing data URL

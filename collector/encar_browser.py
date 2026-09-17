@@ -94,7 +94,7 @@ def discover_encar(fetcher,max_pages=15):
     from playwright.sync_api import sync_playwright
     from .run import FetchError,UA
     info={'status':'일부만 조회','method':'Playwright Chromium headless','pages':0,'complete':False,'queries':[],'note':''}
-    found={};deadline=time.monotonic()+240
+    found={};deadline=time.monotonic()+240;stage='검색 화면 열기'
     # Fetching the same allowed search URL establishes robots policy before rendering.
     fetcher.get(BASE)
     def policy(url):
@@ -108,7 +108,9 @@ def discover_encar(fetcher,max_pages=15):
         try:
             ctx=browser.new_context(locale='ko-KR')
             page=ctx.new_page();page.set_default_timeout(12000)
-            blocked=[]
+            blocked=[];failed_requests=[];bad_responses=[]
+            page.on('requestfailed',lambda request:failed_requests.append({'host':urlsplit(request.url).hostname,'type':request.resource_type,'failure':request.failure}) if request.resource_type in ['document','script','xhr','fetch'] else None)
+            page.on('response',lambda response:bad_responses.append({'host':urlsplit(response.url).hostname,'status':response.status,'type':response.request.resource_type}) if response.status>=400 and response.request.resource_type in ['document','script','xhr','fetch'] else None)
             def route_request(route):
                 request=route.request
                 if request.is_navigation_request() and request.frame==page.main_frame:
@@ -131,18 +133,22 @@ def discover_encar(fetcher,max_pages=15):
                 checked();page.locator(selector).first.wait_for(state='attached',timeout=15000);checked()
             navigate(BASE,'a[data-action]')
             # Use filter actions exposed by the page, never an undocumented API or an invented chassis filter.
+            stage='BMW 제조사 선택'
             page.locator('a[data-action]').filter(has_text=re.compile(r'^BMW$')).first.click()
             page.locator('a[data-action]').filter(has_text=re.compile(r'^4시리즈$')).first.wait_for()
             page.locator('a[data-action]').filter(has_text=re.compile(r'^4시리즈$')).first.click()
+            stage='4시리즈 모델 필터 확인'
             page.locator('a[data-action]').filter(has_text='4시리즈 (').first.wait_for()
             models=page.locator('a[data-action]').evaluate_all("(xs)=>xs.filter(x=>x.textContent.trim().startsWith('4시리즈 (')&&x.dataset.action.includes('.Model.')).map(x=>({name:x.textContent.trim(),action:x.dataset.action}))")
             models=list({m['action']:m for m in models}.values())
             if not models:raise ValueError('모델 필터 확인 실패')
             queries=[]
             for model in models:
+                stage=model['name']+' 연료 필터 확인'
                 navigate(action_url(model['action']),'label[for^="badgeGroup_"]')
                 fuels=[x for x in filter_options(page.content(),'badgeGroup_') if '가솔린' in x['name'] and x.get('count')!=0]
                 for fuel in fuels:
+                    stage=model['name']+' 컨버터블 등급 확인'
                     navigate(action_url(fuel['action']),'label[for^="badge_"]')
                     queries += [q for q in filter_options(page.content(),'badge_') if is_target(q['name']) and q.get('count')!=0]
             queries=list({q['action']:q for q in queries}.values())
@@ -153,6 +159,7 @@ def discover_encar(fetcher,max_pages=15):
                 return info,[]
             all_complete=True
             for query in queries:
+                stage=query['name']+' 검색 목록 확인'
                 if info['pages']>=max_pages:all_complete=False;break
                 url=action_url(query['action'])
                 navigate(url,'#sr_normal')
@@ -176,7 +183,8 @@ def discover_encar(fetcher,max_pages=15):
             info['note']='모델·가솔린·컨버터블 등급 검색 및 페이지 이동 확인. 상세 확인과 별도.'
         except Exception as e:
             info['status']=getattr(e,'status','일부만 조회' if found else '접속 오류')
-            info['note']=getattr(e,'note',type(e).__name__+': '+str(e).splitlines()[0][:160])
+            info['note']=stage+' 단계: '+getattr(e,'note',type(e).__name__+': '+str(e).splitlines()[0][:160])
+            info['diagnostics']={'stage':stage,'pageTitle':page.title(),'filterCount':page.locator('a[data-action]').count(),'failedRequests':failed_requests[:12],'badResponses':bad_responses[:12]}
         finally:browser.close()
     info['listingCount']=len(found);info['checkedAt']=timestamp()
     return info,list(found.values())
