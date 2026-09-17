@@ -29,6 +29,7 @@ function setup(){
  wireVisuals();render();registerTools();
 }
 function summary(){
+ const leadCount=document.getElementById('lead-count');if(leadCount)leadCount.textContent=browserLeads().length;
  const fresh=data.vehicles.filter(g=>g.offers.some(r=>!r.stale&&r.status==='광고 게시 중'));
  const retained=data.vehicles.filter(g=>g.offers.some(wasListed));const wh=retained.filter(g=>g.offers.some(isWhite));const latest=data.runs?.at(-1)||{};
  const status=data.sources.reduce((a,s)=>(a[s.status]=(a[s.status]||0)+1,a),{});
